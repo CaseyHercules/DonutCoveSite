@@ -1,0 +1,56 @@
+---
+description: 
+globs: *
+alwaysApply: false
+---
+# shadcn-ui Integration Guidelines
+
+## Component Usage
+- Use shadcn-ui components for all UI elements
+- Components are available in `src/components/ui/`
+- Each component should be imported from its respective file
+- Customize components using Tailwind classes
+
+## Component Customization
+- Override default styles using Tailwind classes
+- Use the `cn()` utility for conditional class names
+- Maintain consistent theming across components
+- Follow shadcn-ui's theming guidelines
+
+## Best Practices
+- Keep component imports minimal
+- Use composition to build complex UI elements
+- Maintain accessibility features
+- Follow responsive design principles
+
+## Common Components
+- Use `Button` for all button elements
+- Use `Card` for content containers
+- Use `Input` for form fields
+- Use `Dialog` for modal windows
+- Use `DropdownMenu` for navigation menus
+
+## Theme Configuration
+- Customize colors in `tailwind.config.js`
+- Use CSS variables for theming
+- Maintain dark mode support
+- Follow consistent spacing scale
+
+# shadcn-ui Components
+
+The UI components are located in [src/components/ui/](mdc:src/components/ui). Each component is in its own file, for example:
+- [src/components/ui/button.tsx](mdc:src/components/ui/button.tsx) for buttons
+- [src/components/ui/card.tsx](mdc:src/components/ui/card.tsx) for cards
+- [src/components/ui/input.tsx](mdc:src/components/ui/input.tsx) for form inputs
+
+The theme configuration is in [tailwind.config.js](mdc:tailwind.config.js), which defines the color scheme and other design tokens.
+
+To use these components in an Astro file, import them like this:
+```astro
+---
+import { Button } from '../components/ui/button';
+---
+```
+
+
+

@@ -1,0 +1,75 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Astro Project Guidelines
+
+## Project Structure
+The project follows Astro's recommended structure:
+- `src/pages/` - Contains all routes and pages
+- `src/components/` - Reusable components
+- `src/layouts/` - Page layouts and templates
+- `src/styles/` - Global styles and Tailwind configuration
+- `public/` - Static assets
+
+## Component Guidelines
+- Use `.astro` files for Astro components
+- Use `.tsx` for React components only when necessary
+- Keep components small and focused
+- Use composition over inheritance
+- Prefer shadcn-ui components for UI elements
+
+## Styling Guidelines
+- Use Tailwind CSS for styling
+- Follow mobile-first responsive design
+- Use shadcn-ui components for UI elements
+- Maintain consistent spacing using Tailwind's spacing scale
+
+## Performance Guidelines
+- Use Astro's built-in image optimization
+- Implement lazy loading for images below the fold
+- Minimize JavaScript usage
+- Prefer static generation when possible
+
+## Dependency Management
+- Minimize new package additions
+- Prefer built-in Astro features
+- Use shadcn-ui for UI components
+- Keep dependencies up to date
+
+## Accessibility Requirements
+- Use semantic HTML elements
+- Include proper ARIA attributes
+- Ensure proper color contrast
+- Make all interactive elements keyboard accessible
+
+## SEO Best Practices
+- Use proper meta tags
+- Implement structured data when applicable
+- Ensure proper heading hierarchy
+- Use descriptive alt text for images
+
+## Asset Management
+- Store images in `public/` or `src/assets/`
+- Use appropriate image formats
+- Optimize assets before deployment
+- Follow consistent naming conventions
+
+# Astro Project Structure
+
+The main entry point is [src/pages/index.astro](mdc:src/pages/index.astro), which serves as the homepage.
+
+Key directories:
+- [src/pages/](mdc:src/pages) - Contains all routes and pages
+- [src/components/](mdc:src/components) - Reusable components
+- [src/layouts/](mdc:src/layouts) - Page layouts and templates
+- [src/styles/](mdc:src/styles) - Global styles and Tailwind configuration
+- [public/](mdc:public) - Static assets
+
+The project uses [astro.config.mjs](mdc:astro.config.mjs) for Astro configuration and [tailwind.config.js](mdc:tailwind.config.js) for Tailwind CSS settings.
+
+For UI components, we use shadcn-ui which are located in [src/components/ui/](mdc:src/components/ui).
+
+
+

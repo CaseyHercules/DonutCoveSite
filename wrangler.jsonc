@@ -1,8 +1,0 @@
-{
-    "$schema": "node_modules/wrangler/config-schema.json",
-    "name": "donut-cove-site",
-    "compatibility_date": "2025-06-12",
-    "assets": {
-      "directory": "./dist"
-    }
-  }

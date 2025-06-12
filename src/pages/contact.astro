@@ -1,0 +1,313 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Contact Us - Donut Cove Consulting" 
+  description="Get in touch with Donut Cove Consulting to discuss how we can help eliminate tedious tasks and make your team's work more meaningful."
+>
+  <!-- Hero Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-8">
+        <h1 class="font-display font-bold text-4xl md:text-6xl">
+          <span class="bg-gradient-to-r from-donut-dark-pink via-donut-dark-cyan to-donut-dark-moss bg-clip-text text-transparent">
+            Let's Make Work Sweet
+          </span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Ready to eliminate tedious tasks and help your team focus on meaningful work? We'd love to hear about your challenges and discuss how we can help.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        
+        <!-- Contact Information -->
+        <div class="space-y-8">
+          <div class="space-y-6">
+            <h2 class="font-display font-bold text-3xl text-gray-800">
+              Get In Touch
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              We believe great software starts with great conversations. Let's discuss your team's pain points and explore how we can help make their work more enjoyable and meaningful.
+            </p>
+          </div>
+          
+          <!-- Contact Methods -->
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-donut-pink to-donut-dark-pink rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg text-gray-800">Email</h3>
+                <p class="text-gray-600">Drop us a line anytime</p>
+                <a href="mailto:Casey@donutcove.com" class="text-donut-dark-pink hover:text-donut-pink transition-colors font-medium">
+                  Casey@donutcove.com
+                </a>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-donut-cyan to-donut-dark-cyan rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg text-gray-800">Response Time</h3>
+                <p class="text-gray-600">We typically respond within 24 hours</p>
+                <p class="text-donut-dark-cyan font-medium">
+                  Usually much faster!
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-donut-moss to-donut-dark-moss rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h2m-4 3h12"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg text-gray-800">Free Consultation</h3>
+                <p class="text-gray-600">No pressure, no sales pitch</p>
+                <p class="text-donut-dark-moss font-medium">
+                  Just genuine problem-solving
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Decorative Element -->
+          <div class="hidden lg:block">
+            <div class="w-full h-48 bg-gradient-to-br from-donut-light-pink via-donut-light-cyan to-donut-light-moss rounded-3xl flex items-center justify-center relative overflow-hidden">
+              <div class="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
+              <div class="relative z-10 text-center space-y-4">
+                <div class="text-6xl animate-float">🍩</div>
+                <div class="text-lg font-display font-semibold text-gray-800">
+                  Let's Chat!
+                </div>
+              </div>
+              <div class="absolute top-8 left-8 w-4 h-4 bg-donut-pink rounded-full animate-bounce-gentle"></div>
+              <div class="absolute bottom-8 right-8 w-5 h-5 bg-donut-cyan rounded-full animate-float" style="animation-delay: 1s;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="bg-white rounded-3xl shadow-lg p-8 lg:p-12">
+          <h2 class="font-display font-bold text-2xl text-gray-800 mb-8">
+            Tell Us About Your Project
+          </h2>
+          
+          <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                  First Name *
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-donut-cyan focus:border-donut-cyan transition-colors"
+                  placeholder="John"
+                />
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                  Last Name *
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-donut-cyan focus:border-donut-cyan transition-colors"
+                  placeholder="Doe"
+                />
+              </div>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-donut-cyan focus:border-donut-cyan transition-colors"
+                placeholder="john@company.com"
+              />
+            </div>
+            
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                Company Name
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-donut-cyan focus:border-donut-cyan transition-colors"
+                placeholder="Your Company Inc."
+              />
+            </div>
+            
+            <div>
+              <label for="projectType" class="block text-sm font-medium text-gray-700 mb-2">
+                Project Type
+              </label>
+              <select
+                id="projectType"
+                name="projectType"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-donut-cyan focus:border-donut-cyan transition-colors"
+              >
+                <option value="">Select a project type</option>
+                <option value="automation">Process Automation</option>
+                <option value="custom-app">Custom Application</option>
+                <option value="integration">System Integration</option>
+                <option value="consultation">Consultation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                Tell us about your challenges *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-donut-cyan focus:border-donut-cyan transition-colors resize-none"
+                placeholder="What tedious tasks are slowing down your team? What would you like to automate or improve?"
+              ></textarea>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <input
+                type="checkbox"
+                id="privacy"
+                name="privacy"
+                required
+                class="mt-1 h-4 w-4 text-donut-cyan focus:ring-donut-cyan border-gray-300 rounded"
+              />
+              <label for="privacy" class="text-sm text-gray-600">
+                I agree to receive communications from Donut Cove Consulting about my inquiry. We respect your privacy and will never share your information.
+              </label>
+            </div>
+            
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-donut-pink to-donut-cyan text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              id="submit-btn"
+            >
+              Send Message
+            </button>
+          </form>
+          
+          <!-- Success Message -->
+          <div id="success-message" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-green-800 font-medium">Thank you! We've received your message and will get back to you soon.</span>
+            </div>
+          </div>
+          
+          <!-- Error Message -->
+          <div id="error-message" class="hidden mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-red-800 font-medium">Oops! There was an error sending your message. Please try again or email us directly.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Handling Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contact-form') as HTMLFormElement;
+      const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+      const successMessage = document.getElementById('success-message');
+      const errorMessage = document.getElementById('error-message');
+      
+      if (form && submitBtn && successMessage && errorMessage) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          // Disable submit button
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+          
+          // Hide previous messages
+          successMessage.classList.add('hidden');
+          errorMessage.classList.add('hidden');
+          
+          // Get form data
+          const formData = new FormData(form);
+          const data = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            company: formData.get('company'),
+            projectType: formData.get('projectType'),
+            message: formData.get('message'),
+            privacy: formData.get('privacy')
+          };
+          
+          try {
+            // For now, we'll simulate a successful submission
+            // In a real implementation, you would send this to a server endpoint
+            // or use a service like Formspree, Netlify Forms, or similar
+            
+            // Simulate API call delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Show success message
+            successMessage.classList.remove('hidden');
+            
+            // Reset form
+            form.reset();
+            
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            
+            // Optional: Log to console for development
+            console.log('Form submission data:', data);
+            
+          } catch (error) {
+            // Show error message
+            errorMessage.classList.remove('hidden');
+            
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            
+            console.error('Form submission error:', error);
+          }
+        });
+      }
+    });
+  </script>
+</Layout> 
