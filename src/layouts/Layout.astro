@@ -1,5 +1,6 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
+import Navigation from '../components/Navigation.astro';
 
 export interface Props {
 	title: string;
@@ -24,8 +25,8 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 		
-		<!-- ViewTransitions -->
-		<ViewTransitions />
+		<!-- ClientRouter for View Transitions -->
+		<ClientRouter />
 		
 		<style>
 			/* Clean view transition styles */
@@ -323,11 +324,6 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 				left: 50%;
 			}
 			
-			/* Ensure navigation persists through transitions */
-			nav {
-				view-transition-name: navigation;
-			}
-			
 			/* Fix background gradient */
 			html {
 				background: #f8fafc;
@@ -342,50 +338,8 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 		</style>
 	</head>
 	<body>
-		<!-- Modern Navigation -->
-		<nav class="main-nav" id="main-nav">
-			<div class="nav-container">
-				<!-- Logo -->
-				<a href="/" class="logo">
-					<div class="logo-icon">
-						<span>🍩</span>
-					</div>
-					<span class="logo-text">Donut Cove</span>
-				</a>
-				
-				<!-- Desktop Navigation -->
-				<div class="desktop-nav">
-					<a href="/" class="nav-link">Home</a>
-					<a href="/about" class="nav-link">About</a>
-					<a href="/services" class="nav-link">Services</a>
-					<a href="/case-studies" class="nav-link">Case Studies</a>
-					<a href="/faq" class="nav-link">FAQ</a>
-					<a href="/contact" class="cta-button">Contact Us</a>
-				</div>
-				
-				<!-- Mobile Menu Button -->
-				<button class="mobile-menu-button" id="mobile-menu-button" aria-label="Toggle menu">
-					<div class="hamburger" id="hamburger">
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-				</button>
-			</div>
-			
-			<!-- Mobile Menu -->
-			<div class="mobile-menu" id="mobile-menu">
-				<div class="mobile-nav">
-					<a href="/" class="mobile-nav-link">Home</a>
-					<a href="/about" class="mobile-nav-link">About</a>
-					<a href="/services" class="mobile-nav-link">Services</a>
-					<a href="/case-studies" class="mobile-nav-link">Case Studies</a>
-					<a href="/faq" class="mobile-nav-link">FAQ</a>
-					<a href="/contact" class="mobile-cta">Contact Us</a>
-				</div>
-			</div>
-		</nav>
+		<!-- Navigation Component -->
+		<Navigation />
 
 		<!-- Content Layer -->
 		<div>
@@ -394,7 +348,7 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 			</main>
 		</div>
 
-		<!-- Footer -->
+		<!-- Footer with transition:name for smooth transitions -->
 		<footer class="bg-tech-slate text-white mt-20 relative overflow-hidden" transition:name="footer">
 			<!-- Whimsical background elements -->
 			<div class="absolute inset-0 opacity-10">
@@ -454,96 +408,6 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 				</div>
 			</div>
 		</footer>
-
-		<!-- Modern Navigation Script -->
-		<script>
-			// Type declaration for window
-			declare global {
-				interface Window {
-					navCleanup?: () => void;
-				}
-			}
-			
-			function initializeNavigation() {
-				// Get navigation elements
-				const nav = document.getElementById('main-nav');
-				const mobileMenuButton = document.getElementById('mobile-menu-button');
-				const mobileMenu = document.getElementById('mobile-menu');
-				const hamburger = document.getElementById('hamburger');
-				
-				// Scroll effect for navigation
-				function handleScroll() {
-					if (nav) {
-						if (window.scrollY > 20) {
-							nav.classList.add('scrolled');
-						} else {
-							nav.classList.remove('scrolled');
-						}
-					}
-				}
-				
-				// Mobile menu toggle
-				function toggleMobileMenu() {
-					if (mobileMenu && hamburger) {
-						const isOpen = mobileMenu.classList.contains('open');
-						
-						if (isOpen) {
-							mobileMenu.classList.remove('open');
-							hamburger.classList.remove('open');
-						} else {
-							mobileMenu.classList.add('open');
-							hamburger.classList.add('open');
-						}
-					}
-				}
-				
-				// Close mobile menu when clicking outside
-				function handleClickOutside(event: Event) {
-					if (mobileMenu && !nav?.contains(event.target as Node)) {
-						mobileMenu.classList.remove('open');
-						hamburger?.classList.remove('open');
-					}
-				}
-				
-				// Close mobile menu on link click
-				function closeMobileMenuOnLinkClick() {
-					const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-cta');
-					mobileLinks.forEach(link => {
-						link.addEventListener('click', () => {
-							mobileMenu?.classList.remove('open');
-							hamburger?.classList.remove('open');
-						});
-					});
-				}
-				
-				// Add event listeners
-				window.addEventListener('scroll', handleScroll);
-				mobileMenuButton?.addEventListener('click', toggleMobileMenu);
-				document.addEventListener('click', handleClickOutside);
-				closeMobileMenuOnLinkClick();
-				
-				// Initial scroll check
-				handleScroll();
-				
-				// Store cleanup function for transitions
-				window.navCleanup = () => {
-					window.removeEventListener('scroll', handleScroll);
-					document.removeEventListener('click', handleClickOutside);
-				};
-			}
-			
-			// Initialize on DOM load
-			document.addEventListener('DOMContentLoaded', initializeNavigation);
-			
-			// Re-initialize after page transitions
-			document.addEventListener('astro:page-load', () => {
-				// Clean up previous listeners
-				if (window.navCleanup) {
-					window.navCleanup();
-				}
-				initializeNavigation();
-			});
-		</script>
 	</body>
 </html>
 

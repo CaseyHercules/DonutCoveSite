@@ -203,11 +203,24 @@ import Layout from '../layouts/Layout.astro';
                 id="privacy"
                 name="privacy"
                 required
-                class="mt-1 h-4 w-4 text-tech-teal focus:ring-tech-teal border-gray-300 rounded"
+                class="mt-1 h-4 w-4 text-tech-teal focus:ring-tech-teal border-gray-300 rounded checkbox-custom"
               />
               <label for="privacy" class="text-sm text-tech-slate">
                 I agree to receive communications from Donut Cove Consulting about my inquiry. We respect your privacy and will never share your information.
               </label>
+            </div>
+            
+            <!-- Custom validation message for checkbox -->
+            <div id="checkbox-error" class="hidden bg-gradient-to-r from-red-50 to-pink-50 border-l-4 border-red-400 p-4 rounded-lg">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 text-red-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <h4 class="text-red-800 font-semibold">Agreement Required</h4>
+                  <p class="text-red-700">Please check the agreement box to continue. We respect your privacy and only use your information to respond to your inquiry.</p>
+                </div>
+              </div>
             </div>
             
             <button
@@ -243,71 +256,138 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Custom Styles for Better Validation -->
+  <style>
+    /* Custom checkbox styling */
+    .checkbox-custom:invalid {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 1px #ef4444;
+    }
+    
+    /* Hide browser default validation messages */
+    input:invalid + label::after {
+      content: none;
+    }
+    
+    /* Custom validation styling for all required fields */
+    input:invalid:not(:focus):not(:placeholder-shown),
+    textarea:invalid:not(:focus):not(:placeholder-shown),
+    select:invalid:not(:focus) {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 1px #ef4444;
+    }
+    
+    /* Remove invalid styling on focus */
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #14b8a6 !important;
+      box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2) !important;
+    }
+  </style>
+
   <!-- Form Handling Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    function initializeContactForm() {
       const form = document.getElementById('contact-form') as HTMLFormElement;
       const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
       const successMessage = document.getElementById('success-message');
       const errorMessage = document.getElementById('error-message');
+      const checkboxError = document.getElementById('checkbox-error');
+      const privacyCheckbox = document.getElementById('privacy') as HTMLInputElement;
       
-      if (form && submitBtn && successMessage && errorMessage) {
-        form.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          
-          // Disable submit button
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Sending...';
-          
-          // Hide previous messages
-          successMessage.classList.add('hidden');
-          errorMessage.classList.add('hidden');
-          
-          // Get form data
-          const formData = new FormData(form);
-          const data = {
-            firstName: formData.get('firstName'),
-            lastName: formData.get('lastName'),
-            email: formData.get('email'),
-            company: formData.get('company'),
-            projectType: formData.get('projectType'),
-            message: formData.get('message'),
-            privacy: formData.get('privacy')
-          };
-          
-          try {
-            // For now, we'll simulate a successful submission
-            // In a real implementation, you would send this to a server endpoint
-            // or use a service like Formspree, Netlify Forms, or similar
-            
-            // Simulate API call delay
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            // Show success message
-            successMessage.classList.remove('hidden');
-            
-            // Reset form
-            form.reset();
-            
-            // Re-enable submit button
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-            
-            // Optional: Log to console for development
-            console.log('Form submission data:', data);
-            
-          } catch (error) {
-            // Show error message
-            errorMessage.classList.remove('hidden');
-            
-            // Re-enable submit button
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-            
-            console.error('Form submission error:', error);
-          }
-        });
+      if (!form || !submitBtn || !successMessage || !errorMessage || !checkboxError || !privacyCheckbox) {
+        return;
       }
-    });
+      
+      // Remove existing listeners to prevent duplicates
+      const newForm = form.cloneNode(true) as HTMLFormElement;
+      form.parentNode?.replaceChild(newForm, form);
+      
+      // Get references to new elements
+      const formElement = document.getElementById('contact-form') as HTMLFormElement;
+      const submitBtnElement = document.getElementById('submit-btn') as HTMLButtonElement;
+      const successElement = document.getElementById('success-message');
+      const errorElement = document.getElementById('error-message');
+      const checkboxErrorElement = document.getElementById('checkbox-error');
+      const privacyElement = document.getElementById('privacy') as HTMLInputElement;
+      
+      if (!formElement || !submitBtnElement || !successElement || !errorElement || !checkboxErrorElement || !privacyElement) {
+        return;
+      }
+      
+      formElement.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Hide previous messages
+        successElement.classList.add('hidden');
+        errorElement.classList.add('hidden');
+        checkboxErrorElement.classList.add('hidden');
+        
+        // Check privacy checkbox specifically
+        if (!privacyElement.checked) {
+          checkboxErrorElement.classList.remove('hidden');
+          privacyElement.focus();
+          return;
+        }
+        
+        // Disable submit button
+        submitBtnElement.disabled = true;
+        submitBtnElement.textContent = 'Sending...';
+        
+        // Get form data
+        const formData = new FormData(formElement);
+        const data = {
+          firstName: formData.get('firstName'),
+          lastName: formData.get('lastName'),
+          email: formData.get('email'),
+          company: formData.get('company'),
+          projectType: formData.get('projectType'),
+          message: formData.get('message'),
+          privacy: formData.get('privacy')
+        };
+        
+        try {
+          // Simulate API call delay
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          
+          // Show success message
+          successElement.classList.remove('hidden');
+          
+          // Reset form
+          formElement.reset();
+          
+          // Re-enable submit button
+          submitBtnElement.disabled = false;
+          submitBtnElement.textContent = 'Send Message';
+          
+          // Optional: Log to console for development
+          console.log('Form submission data:', data);
+          
+        } catch (error) {
+          // Show error message
+          errorElement.classList.remove('hidden');
+          
+          // Re-enable submit button
+          submitBtnElement.disabled = false;
+          submitBtnElement.textContent = 'Send Message';
+          
+          console.error('Form submission error:', error);
+        }
+      });
+      
+      // Hide checkbox error when checkbox is checked
+      privacyElement.addEventListener('change', function() {
+        if (privacyElement.checked) {
+          checkboxErrorElement.classList.add('hidden');
+        }
+      });
+    }
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', initializeContactForm);
+    
+    // Re-initialize after Astro page transitions
+    document.addEventListener('astro:page-load', initializeContactForm);
   </script>
 </Layout> 

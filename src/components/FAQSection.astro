@@ -194,11 +194,19 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+function initializeFAQ() {
   const container = document.getElementById('faq-container');
   if (!container) return;
   
-  const faqButtons = container.querySelectorAll('.faq-button');
+  // Remove existing listeners by cloning the container
+  const newContainer = container.cloneNode(true);
+  container.parentNode?.replaceChild(newContainer, container);
+  
+  // Get the new container reference
+  const faqContainer = document.getElementById('faq-container');
+  if (!faqContainer) return;
+  
+  const faqButtons = faqContainer.querySelectorAll('.faq-button');
   
   faqButtons.forEach(function(button) {
     button.addEventListener('click', function() {
@@ -246,5 +254,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-});
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initializeFAQ);
+
+// Re-initialize after Astro page transitions
+document.addEventListener('astro:page-load', initializeFAQ);
 </script> 
