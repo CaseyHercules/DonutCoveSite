@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FAQSection from '../components/FAQSection.astro';
 ---
 
 <Layout 
@@ -7,11 +8,11 @@ import Layout from '../layouts/Layout.astro';
   description="Frequently asked questions about Donut Cove Consulting's software development services, process, and approach to eliminating tedious tasks."
 >
   <!-- Hero Section -->
-  <section class="py-20">
+  <section class="py-20" transition:name="faq-hero">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-8">
         <h1 class="font-display font-bold text-4xl md:text-6xl">
-          <span class="bg-gradient-to-r from-donut-dark-pink via-donut-dark-cyan to-donut-dark-moss bg-clip-text text-transparent">
+          <span class="bg-gradient-to-r from-tech-blue via-tech-purple to-tech-teal bg-clip-text text-transparent">
             Frequently Asked Questions
           </span>
         </h1>
@@ -24,235 +25,31 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- FAQ Section -->
   <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="space-y-8">
-        
-        <!-- FAQ Item 1 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left focus:outline-none group faq-toggle" data-target="faq-1">
-            <div class="flex items-center justify-between">
-              <h3 class="font-display font-semibold text-xl text-gray-800 group-hover:text-donut-dark-pink transition-colors">
-                What makes Donut Cove Consulting different from other software development companies?
-              </h3>
-              <svg class="w-6 h-6 text-donut-dark-cyan transform transition-transform group-hover:scale-110 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-1">
-            <p class="text-gray-600 leading-relaxed">
-              We focus specifically on eliminating tedious employee actions from a human perspective. Rather than just building software, we analyze your team's daily frustrations and design solutions that genuinely make work more meaningful. Our proven track record shows we don't just automate processes - we liberate human potential.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 2 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left focus:outline-none group faq-toggle" data-target="faq-2">
-            <div class="flex items-center justify-between">
-              <h3 class="font-display font-semibold text-xl text-gray-800 group-hover:text-donut-dark-cyan transition-colors">
-                How long does a typical project take to complete?
-              </h3>
-              <svg class="w-6 h-6 text-donut-dark-cyan transform transition-transform group-hover:scale-110 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-2">
-            <p class="text-gray-600 leading-relaxed">
-              Project timelines vary based on complexity and scope. Simple automation projects typically take 2-4 weeks, while comprehensive custom applications can take 2-4 months. We always provide detailed timeline estimates during our discovery phase and maintain transparent communication throughout the development process.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 3 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left focus:outline-none group faq-toggle" data-target="faq-3">
-            <div class="flex items-center justify-between">
-              <h3 class="font-display font-semibold text-xl text-gray-800 group-hover:text-donut-dark-moss transition-colors">
-                Do you work with small businesses or just larger companies?
-              </h3>
-              <svg class="w-6 h-6 text-donut-dark-cyan transform transition-transform group-hover:scale-110 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-3">
-            <p class="text-gray-600 leading-relaxed">
-              We specialize in serving small to medium businesses. We understand the unique challenges and constraints that SMBs face, and we design solutions that are both powerful and cost-effective. Our approach scales with your business needs, ensuring you get maximum value without unnecessary complexity.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 4 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left focus:outline-none group faq-toggle" data-target="faq-4">
-            <div class="flex items-center justify-between">
-              <h3 class="font-display font-semibold text-xl text-gray-800 group-hover:text-donut-dark-pink transition-colors">
-                What technologies do you use for development?
-              </h3>
-              <svg class="w-6 h-6 text-donut-dark-cyan transform transition-transform group-hover:scale-110 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-4">
-            <p class="text-gray-600 leading-relaxed">
-              We use modern, reliable technologies that are well-suited for business applications. Our tech stack includes Python, JavaScript, Node.js, React, and various database systems. However, we believe in choosing the right tool for each job rather than forcing a one-size-fits-all approach. We prioritize maintainability and scalability over trendy technologies.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 5 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left focus:outline-none group faq-toggle" data-target="faq-5">
-            <div class="flex items-center justify-between">
-              <h3 class="font-display font-semibold text-xl text-gray-800 group-hover:text-donut-dark-cyan transition-colors">
-                How do you ensure the software will actually be used by our team?
-              </h3>
-              <svg class="w-6 h-6 text-donut-dark-cyan transform transition-transform group-hover:scale-110 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-5">
-            <p class="text-gray-600 leading-relaxed">
-              This is exactly why we take a human-centered approach. We spend significant time understanding your team's current workflows, pain points, and preferences. We involve key team members in the design process, create intuitive interfaces, and ensure the solution genuinely makes their work easier, not harder. We also provide comprehensive training and ongoing support.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 6 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left focus:outline-none group faq-toggle" data-target="faq-6">
-            <div class="flex items-center justify-between">
-              <h3 class="font-display font-semibold text-xl text-gray-800 group-hover:text-donut-dark-moss transition-colors">
-                What kind of support do you provide after the project is complete?
-              </h3>
-              <svg class="w-6 h-6 text-donut-dark-cyan transform transition-transform group-hover:scale-110 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-6">
-            <p class="text-gray-600 leading-relaxed">
-              We provide comprehensive post-launch support including bug fixes, user training, and system maintenance. We believe in long-term partnerships with our clients and offer ongoing support packages to ensure your solution continues to evolve with your business needs. Our goal is your team's continued success and satisfaction.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 7 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left focus:outline-none group faq-toggle" data-target="faq-7">
-            <div class="flex items-center justify-between">
-              <h3 class="font-display font-semibold text-xl text-gray-800 group-hover:text-donut-dark-pink transition-colors">
-                How do you handle project pricing and budgets?
-              </h3>
-              <svg class="w-6 h-6 text-donut-dark-cyan transform transition-transform group-hover:scale-110 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-7">
-            <p class="text-gray-600 leading-relaxed">
-              We provide transparent, fixed-price quotes based on clearly defined project scope. After our discovery phase, you'll know exactly what you're getting and what it costs - no surprises. We believe in honest pricing that reflects the value we deliver: the time your team will save and the increased job satisfaction they'll experience.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 8 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left focus:outline-none group faq-toggle" data-target="faq-8">
-            <div class="flex items-center justify-between">
-              <h3 class="font-display font-semibold text-xl text-gray-800 group-hover:text-donut-dark-cyan transition-colors">
-                Can you integrate with our existing systems and tools?
-              </h3>
-              <svg class="w-6 h-6 text-donut-dark-cyan transform transition-transform group-hover:scale-110 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-8">
-            <p class="text-gray-600 leading-relaxed">
-              Absolutely! Integration is one of our core strengths. We understand that you've invested in existing systems, and we work to enhance rather than replace what's already working. We specialize in creating seamless connections between different platforms, databases, and tools to create a unified, efficient workflow.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 9 -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left focus:outline-none group faq-toggle" data-target="faq-9">
-            <div class="flex items-center justify-between">
-              <h3 class="font-display font-semibold text-xl text-gray-800 group-hover:text-donut-dark-moss transition-colors">
-                How do we get started with a project?
-              </h3>
-              <svg class="w-6 h-6 text-donut-dark-cyan transform transition-transform group-hover:scale-110 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="px-8 pb-6 hidden faq-content" id="faq-9">
-            <p class="text-gray-600 leading-relaxed">
-              It's simple! Reach out to us through our contact form or email Casey@donutcove.com directly. We'll start with a friendly conversation to understand your challenges and goals. If we're a good fit, we'll conduct a comprehensive discovery session to map out the perfect solution for your team. No pressure, no sales pitches - just genuine problem-solving.
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQSection />
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-r from-donut-light-pink via-donut-light-cyan to-donut-light-moss">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-800">
+  <section class="py-20 bg-gradient-to-br from-white via-tech-blue-light/30 to-tech-purple-light/40 relative overflow-hidden">
+    <!-- Whimsical background elements -->
+    <div class="absolute inset-0 opacity-15">
+      <div class="absolute top-20 left-20 w-16 h-16 bg-tech-pink/40 rounded-full animate-float"></div>
+      <div class="absolute top-40 right-32 w-12 h-12 bg-tech-orange/40 rounded-full animate-bounce-gentle" style="animation-delay: 1s;"></div>
+      <div class="absolute bottom-32 left-1/4 w-20 h-20 bg-tech-blue/30 rounded-full animate-float" style="animation-delay: 2s;"></div>
+      <div class="absolute bottom-20 right-20 w-14 h-14 bg-tech-purple/40 rounded-full animate-bounce-gentle" style="animation-delay: 0.5s;"></div>
+    </div>
+    
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-tech-charcoal">
         Still Have Questions?
       </h2>
-      <p class="text-xl text-gray-600">
-        We'd love to chat about your specific needs and how we can help make your team's work more meaningful.
+      <p class="text-xl text-tech-slate leading-relaxed max-w-3xl mx-auto">
+        We'd love to discuss your specific needs and how we can help streamline your operations. Let's have a conversation!
       </p>
-      <a href="/contact" class="inline-block bg-gradient-to-r from-donut-dark-pink to-donut-dark-cyan text-white px-12 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact" class="inline-block bg-gradient-to-r from-tech-blue-dark to-tech-purple-dark text-white px-12 py-4 rounded-xl font-semibold text-lg hover:shadow-glow-purple transform hover:-translate-y-1 transition-all duration-300">
         Get In Touch
       </a>
     </div>
   </section>
-
-  <!-- FAQ Toggle Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggles = document.querySelectorAll('.faq-toggle');
-      
-      toggles.forEach((toggle: Element) => {
-        toggle.addEventListener('click', function(this: HTMLElement) {
-          const targetId = this.getAttribute('data-target');
-          if (!targetId) return;
-          
-          const content = document.getElementById(targetId);
-          const icon = this.querySelector('.faq-icon') as HTMLElement;
-          
-          if (content && icon) {
-            if (content.classList.contains('hidden')) {
-              // Close all other open FAQs
-              document.querySelectorAll('.faq-content').forEach(item => {
-                item.classList.add('hidden');
-              });
-              document.querySelectorAll('.faq-icon').forEach((item: Element) => {
-                const iconElement = item as HTMLElement;
-                if (iconElement.style) {
-                  iconElement.style.transform = 'rotate(0deg)';
-                }
-              });
-              
-              // Open the clicked FAQ
-              content.classList.remove('hidden');
-              icon.style.transform = 'rotate(180deg)';
-            } else {
-              // Close the clicked FAQ
-              content.classList.add('hidden');
-              icon.style.transform = 'rotate(0deg)';
-            }
-          }
-        });
-      });
-    });
-  </script>
 </Layout> 

@@ -32,11 +32,12 @@ export default {
           'orange-dark': '#d97706',
           'pink-dark': '#be185d',
           
-          // Professional grays with warmth
-          'slate': '#334155',
-          'gray': '#475569',
+          // Professional grays with better contrast
+          'slate': '#1e293b',    // Much darker for better readability
+          'gray': '#334155',     // Darker for better contrast
+          'charcoal': '#0f172a', // Very dark for high contrast text
           'light': '#f8fafc',
-          'muted': '#64748b',
+          'muted': '#475569',    // Darker muted text
           'border': '#e2e8f0',
         }
       },

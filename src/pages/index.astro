@@ -5,10 +5,13 @@ import Layout from '../layouts/Layout.astro';
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Donut Cove Consulting - Software Development Solutions">
+<Layout 
+	title="Donut Cove Consulting - Software Development That Makes Work Delightful" 
+	description="Transform your business operations with custom software solutions that eliminate tedious tasks and bring joy back to work. Specializing in automation, integrations, and delightful user experiences."
+>
 	<!-- Hero Section -->
-	<section class="relative overflow-hidden">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+	<section class="py-20">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 				<div class="space-y-10">
 					<div class="space-y-6">
@@ -17,20 +20,20 @@ import Layout from '../layouts/Layout.astro';
 								Software Solutions
 							</span>
 							<br />
-							<span class="text-tech-slate">
+							<span class="text-tech-charcoal">
 								That Spark Joy
 							</span>
 						</h1>
-						<p class="text-xl text-tech-gray leading-relaxed font-medium">
+						<p class="text-xl text-tech-slate leading-relaxed font-medium">
 							We eliminate tedious manual processes and build delightful software solutions that empower your team to focus on the work that truly matters.
 						</p>
 					</div>
 					
 					<div class="flex flex-col sm:flex-row gap-6">
 						<a href="/contact" class="bg-gradient-to-r from-tech-blue to-tech-purple text-white px-10 py-5 rounded-xl font-semibold text-lg hover:shadow-glow-purple transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-center">
-							Start Your Journey
+							Start Your Project
 						</a>
-						<a href="/services" class="border-2 border-tech-teal text-tech-teal px-10 py-5 rounded-xl font-semibold text-lg hover:bg-tech-teal hover:text-white hover:shadow-glow-teal transition-all duration-300 text-center transform hover:scale-105">
+						<a href="/services" class="border-2 border-tech-blue text-tech-blue px-10 py-5 rounded-xl font-semibold text-lg hover:bg-tech-blue hover:text-white transform hover:-translate-y-1 transition-all duration-300 text-center">
 							Explore Services
 						</a>
 					</div>
@@ -38,15 +41,14 @@ import Layout from '../layouts/Layout.astro';
 				
 				<div class="relative">
 					<div class="w-full h-96 bg-gradient-to-br from-tech-blue-light via-tech-purple-light to-tech-teal-light rounded-2xl flex items-center justify-center relative overflow-hidden shadow-large border border-tech-border">
-						<div class="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
 						<div class="relative z-10 text-center space-y-6">
 							<div class="text-6xl animate-float">
 								<div class="text-8xl">🍩</div>
 							</div>
-							<div class="text-2xl font-display font-semibold text-tech-slate">
+							<div class="text-2xl font-display font-semibold text-tech-charcoal">
 								Automated Excellence
 							</div>
-							<div class="text-tech-gray font-medium">
+							<div class="text-tech-slate font-medium">
 								Making work delightful, one process at a time
 							</div>
 						</div>
@@ -64,13 +66,13 @@ import Layout from '../layouts/Layout.astro';
 	</section>
 
 	<!-- Value Proposition -->
-	<section class="py-24 bg-white/70 backdrop-blur-sm">
+	<section class="py-24">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="text-center space-y-6 mb-20">
-				<h2 class="font-display font-bold text-4xl md:text-5xl text-tech-slate">
+				<h2 class="font-display font-bold text-4xl md:text-5xl text-tech-charcoal">
 					Why Our Approach Works
 				</h2>
-				<p class="text-xl text-tech-gray max-w-4xl mx-auto leading-relaxed">
+				<p class="text-xl text-tech-slate max-w-4xl mx-auto leading-relaxed">
 					We combine technical expertise with a deep understanding of what makes work enjoyable and meaningful.
 				</p>
 			</div>
@@ -80,8 +82,8 @@ import Layout from '../layouts/Layout.astro';
 					<div class="w-20 h-20 mx-auto bg-gradient-to-br from-tech-blue to-tech-blue-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-bounce-gentle">
 						<span class="text-3xl">⚡</span>
 					</div>
-					<h3 class="font-display font-semibold text-2xl text-tech-slate">Efficiency Focused</h3>
-					<p class="text-tech-gray leading-relaxed text-lg">
+					<h3 class="font-display font-semibold text-2xl text-tech-charcoal">Efficiency Focused</h3>
+					<p class="text-tech-slate leading-relaxed text-lg">
 						We identify and eliminate bottlenecks in your workflows, automating repetitive tasks so your team can focus on strategic initiatives that drive growth.
 					</p>
 				</div>
@@ -90,8 +92,8 @@ import Layout from '../layouts/Layout.astro';
 					<div class="w-20 h-20 mx-auto bg-gradient-to-br from-tech-purple to-tech-purple-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-bounce-gentle">
 						<span class="text-3xl">💜</span>
 					</div>
-					<h3 class="font-display font-semibold text-2xl text-tech-slate">Human-Centered Design</h3>
-					<p class="text-tech-gray leading-relaxed text-lg">
+					<h3 class="font-display font-semibold text-2xl text-tech-charcoal">Human-Centered Design</h3>
+					<p class="text-tech-slate leading-relaxed text-lg">
 						Our solutions are designed with your team's happiness in mind, ensuring technology enhances rather than complicates their daily work experience.
 					</p>
 				</div>
@@ -100,8 +102,8 @@ import Layout from '../layouts/Layout.astro';
 					<div class="w-20 h-20 mx-auto bg-gradient-to-br from-tech-teal to-tech-teal-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-bounce-gentle">
 						<span class="text-3xl">📊</span>
 					</div>
-					<h3 class="font-display font-semibold text-2xl text-tech-slate">Measurable Impact</h3>
-					<p class="text-tech-gray leading-relaxed text-lg">
+					<h3 class="font-display font-semibold text-2xl text-tech-charcoal">Measurable Impact</h3>
+					<p class="text-tech-slate leading-relaxed text-lg">
 						Every solution we deliver comes with clear metrics and demonstrable ROI, ensuring your investment drives real business value and team satisfaction.
 					</p>
 				</div>
@@ -113,38 +115,38 @@ import Layout from '../layouts/Layout.astro';
 	<section class="py-24">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="text-center space-y-6 mb-20">
-				<h2 class="font-display font-bold text-4xl md:text-5xl text-tech-slate">
+				<h2 class="font-display font-bold text-4xl md:text-5xl text-tech-charcoal">
 					Our Core Services
 				</h2>
-				<p class="text-xl text-tech-gray max-w-4xl mx-auto leading-relaxed">
+				<p class="text-xl text-tech-slate max-w-4xl mx-auto leading-relaxed">
 					Comprehensive software development solutions designed for small to medium businesses ready to scale and thrive.
 				</p>
 			</div>
 			
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 				<div class="p-10 rounded-2xl bg-gradient-to-br from-white to-tech-blue-light border border-tech-blue/20 hover:shadow-glow transform hover:-translate-y-2 transition-all duration-300">
 					<div class="space-y-6">
 						<div class="flex items-center space-x-4">
 							<div class="w-16 h-16 bg-gradient-to-br from-tech-blue to-tech-blue-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-wiggle">
-								<span class="text-2xl">🔄</span>
+								<span class="text-2xl">⚡</span>
 							</div>
-							<h3 class="font-display font-semibold text-3xl text-tech-slate">Process Automation</h3>
+							<h3 class="font-display font-semibold text-3xl text-tech-charcoal">Process Automation</h3>
 						</div>
-						<p class="text-tech-gray text-lg leading-relaxed">
+						<p class="text-tech-slate text-lg leading-relaxed">
 							Transform manual, time-consuming tasks into streamlined automated workflows that reduce errors and free up your team for creative, strategic work.
 						</p>
-						<ul class="space-y-3 text-tech-gray">
+						<ul class="space-y-3 text-tech-slate">
 							<li class="flex items-center space-x-3">
 								<div class="w-2 h-2 bg-tech-blue rounded-full"></div>
-								<span class="font-medium">Workflow automation systems</span>
+								<span class="font-medium">Data entry automation</span>
 							</li>
 							<li class="flex items-center space-x-3">
 								<div class="w-2 h-2 bg-tech-blue rounded-full"></div>
-								<span class="font-medium">Data processing pipelines</span>
+								<span class="font-medium">Report generation</span>
 							</li>
 							<li class="flex items-center space-x-3">
 								<div class="w-2 h-2 bg-tech-blue rounded-full"></div>
-								<span class="font-medium">System integrations</span>
+								<span class="font-medium">Email & notification systems</span>
 							</li>
 						</ul>
 					</div>
@@ -156,12 +158,12 @@ import Layout from '../layouts/Layout.astro';
 							<div class="w-16 h-16 bg-gradient-to-br from-tech-purple to-tech-purple-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-wiggle">
 								<span class="text-2xl">🎨</span>
 							</div>
-							<h3 class="font-display font-semibold text-3xl text-tech-slate">Custom Applications</h3>
+							<h3 class="font-display font-semibold text-3xl text-tech-charcoal">Custom Applications</h3>
 						</div>
-						<p class="text-tech-gray text-lg leading-relaxed">
+						<p class="text-tech-slate text-lg leading-relaxed">
 							Tailored software solutions built specifically for your business requirements, processes, and growth objectives. Made with care and attention to detail.
 						</p>
-						<ul class="space-y-3 text-tech-gray">
+						<ul class="space-y-3 text-tech-slate">
 							<li class="flex items-center space-x-3">
 								<div class="w-2 h-2 bg-tech-purple rounded-full"></div>
 								<span class="font-medium">Web applications</span>
@@ -188,21 +190,21 @@ import Layout from '../layouts/Layout.astro';
 	</section>
 
 	<!-- CTA Section -->
-	<section class="py-24 bg-gradient-to-r from-tech-blue-light via-tech-purple-light to-tech-teal-light relative overflow-hidden">
+	<section class="py-24 from-white via-tech-blue-light/30 to-tech-purple-light/40 relative overflow-hidden">
 		<!-- Whimsical background elements -->
-		<div class="absolute inset-0 opacity-20">
-			<div class="absolute top-20 left-20 w-16 h-16 bg-tech-pink rounded-full animate-float"></div>
-			<div class="absolute top-40 right-32 w-12 h-12 bg-tech-orange rounded-full animate-bounce-gentle" style="animation-delay: 1s;"></div>
-			<div class="absolute bottom-32 left-1/4 w-20 h-20 bg-tech-blue rounded-full animate-float" style="animation-delay: 2s;"></div>
-			<div class="absolute bottom-20 right-20 w-14 h-14 bg-tech-purple rounded-full animate-bounce-gentle" style="animation-delay: 0.5s;"></div>
+		<div class="absolute inset-0 opacity-15">
+			<div class="absolute top-20 left-20 w-16 h-16 bg-tech-pink/40 rounded-full animate-float"></div>
+			<div class="absolute top-40 right-32 w-12 h-12 bg-tech-orange/40 rounded-full animate-bounce-gentle" style="animation-delay: 1s;"></div>
+			<div class="absolute bottom-32 left-1/4 w-20 h-20 bg-tech-blue/30 rounded-full animate-float" style="animation-delay: 2s;"></div>
+			<div class="absolute bottom-20 right-20 w-14 h-14 bg-tech-purple/40 rounded-full animate-bounce-gentle" style="animation-delay: 0.5s;"></div>
 		</div>
 		
 		<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 relative z-10">
 			<div class="space-y-6">
-				<h2 class="font-display font-bold text-4xl md:text-5xl text-tech-slate">
+				<h2 class="font-display font-bold text-4xl md:text-5xl text-tech-charcoal">
 					Ready to Transform Your Operations?
 				</h2>
-				<p class="text-xl text-tech-gray leading-relaxed max-w-3xl mx-auto">
+				<p class="text-xl text-tech-slate leading-relaxed max-w-3xl mx-auto">
 					Let's chat about how custom software solutions can streamline your processes, delight your team, and accelerate your business growth.
 				</p>
 			</div>

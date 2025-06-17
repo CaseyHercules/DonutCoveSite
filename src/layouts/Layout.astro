@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 export interface Props {
 	title: string;
 	description?: string;
@@ -21,14 +23,99 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+		
+		<ViewTransitions fallback="none" />
+		
+		<style>
+			/* Custom smooth view transitions */
+			::view-transition-old(root),
+			::view-transition-new(root) {
+				animation-duration: 600ms;
+				animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+			}
+			
+			/* Fade transition for main content */
+			::view-transition-old(main),
+			::view-transition-new(main) {
+				animation-duration: 400ms;
+				animation-timing-function: ease-out;
+			}
+			
+			/* Smooth logo transition */
+			::view-transition-old(logo),
+			::view-transition-new(logo) {
+				animation-duration: 300ms;
+				animation-timing-function: ease-in-out;
+			}
+			
+			/* Ensure navigation stays above transitioning content */
+			nav {
+				z-index: 9999 !important;
+				contain: layout style paint;
+				isolation: isolate;
+			}
+			
+			/* Prevent content from showing through nav during transitions */
+			::view-transition-group(root) {
+				z-index: 1;
+			}
+			
+			::view-transition-group(main) {
+				z-index: 2;
+			}
+			
+			/* Force view transitions to stay below navigation */
+			::view-transition-group(*) {
+				z-index: 100 !important;
+			}
+			
+			::view-transition-old(*),
+			::view-transition-new(*) {
+				z-index: 50 !important;
+			}
+			
+			/* Create a new stacking context for navigation */
+			body {
+				position: relative;
+			}
+			
+			/* Navigation should always be on top with isolation */
+			nav[data-astro-transition-persist] {
+				position: sticky !important;
+				top: 0 !important;
+				z-index: 99999 !important;
+				isolation: isolate !important;
+				contain: layout style paint !important;
+			}
+			
+			/* Additional targeting for our navigation */
+			nav[data-nav-persist] {
+				position: sticky !important;
+				top: 0 !important;
+				z-index: 999999 !important;
+				isolation: isolate !important;
+				contain: layout style paint !important;
+			}
+			
+			/* Fix background gradient to cover full document height */
+			html {
+				background: #f8fafc;
+				min-height: 100%;
+			}
+			
+			body {
+				background: transparent;
+				min-height: 100vh;
+			}
+		</style>
 	</head>
-	<body class="bg-gradient-to-br from-tech-blue-light via-white to-tech-purple-light min-h-screen">
+	<body>
 		<!-- Navigation -->
-		<nav class="bg-white/95 backdrop-blur-md border-b border-tech-border sticky top-0 z-50 shadow-soft">
+		<nav class="bg-white/95 backdrop-blur-md border-b border-tech-border sticky top-0 z-[99999] shadow-soft" transition:persist data-nav-persist>
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="flex justify-between items-center py-4">
 					<!-- Logo -->
-					<a href="/" class="flex items-center space-x-3 group">
+					<a href="/" class="flex items-center space-x-3 group" transition:name="logo">
 						<div class="w-10 h-10 bg-gradient-to-br from-tech-blue to-tech-purple rounded-xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-soft relative overflow-hidden">
 							<div class="absolute inset-0 bg-gradient-to-br from-tech-pink/20 to-tech-orange/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 							<span class="text-white text-lg relative z-10 group-hover:animate-wiggle">🍩</span>
@@ -40,18 +127,18 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 					
 					<!-- Desktop Menu -->
 					<div class="hidden md:flex items-center space-x-8">
-						<a href="/" class="text-tech-slate hover:text-tech-blue transition-colors duration-200 font-medium hover:scale-105 transform">Home</a>
-						<a href="/about" class="text-tech-slate hover:text-tech-purple transition-colors duration-200 font-medium hover:scale-105 transform">About</a>
-						<a href="/services" class="text-tech-slate hover:text-tech-teal transition-colors duration-200 font-medium hover:scale-105 transform">Services</a>
-						<a href="/case-studies" class="text-tech-slate hover:text-tech-orange transition-colors duration-200 font-medium hover:scale-105 transform">Case Studies</a>
-						<a href="/faq" class="text-tech-slate hover:text-tech-emerald transition-colors duration-200 font-medium hover:scale-105 transform">FAQ</a>
+						<a href="/" class="text-tech-charcoal hover:text-tech-blue transition-colors duration-200 font-medium hover:scale-105 transform">Home</a>
+						<a href="/about" class="text-tech-charcoal hover:text-tech-purple transition-colors duration-200 font-medium hover:scale-105 transform">About</a>
+						<a href="/services" class="text-tech-charcoal hover:text-tech-teal transition-colors duration-200 font-medium hover:scale-105 transform">Services</a>
+						<a href="/case-studies" class="text-tech-charcoal hover:text-tech-orange transition-colors duration-200 font-medium hover:scale-105 transform">Case Studies</a>
+						<a href="/faq" class="text-tech-charcoal hover:text-tech-emerald transition-colors duration-200 font-medium hover:scale-105 transform">FAQ</a>
 						<a href="/contact" class="bg-gradient-to-r from-tech-blue to-tech-purple text-white px-6 py-3 rounded-xl hover:shadow-glow-purple transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 font-medium">
 							Contact Us
 						</a>
 					</div>
 					
 					<!-- Mobile Menu Button -->
-					<button class="md:hidden p-2 text-tech-slate hover:text-tech-blue transition-colors hover:scale-110 transform" id="mobile-menu-button">
+					<button class="md:hidden p-2 text-tech-charcoal hover:text-tech-blue transition-colors hover:scale-110 transform" id="mobile-menu-button">
 						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
 						</svg>
@@ -61,11 +148,11 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 				<!-- Mobile Menu -->
 				<div class="md:hidden hidden pb-4" id="mobile-menu">
 					<div class="flex flex-col space-y-3 bg-white rounded-xl p-4 shadow-medium mt-2 border border-tech-border">
-						<a href="/" class="text-tech-slate hover:text-tech-blue transition-colors duration-200 font-medium py-2 px-3 rounded-lg hover:bg-tech-blue-light">Home</a>
-						<a href="/about" class="text-tech-slate hover:text-tech-purple transition-colors duration-200 font-medium py-2 px-3 rounded-lg hover:bg-tech-purple-light">About</a>
-						<a href="/services" class="text-tech-slate hover:text-tech-teal transition-colors duration-200 font-medium py-2 px-3 rounded-lg hover:bg-tech-teal-light">Services</a>
-						<a href="/case-studies" class="text-tech-slate hover:text-tech-orange transition-colors duration-200 font-medium py-2 px-3 rounded-lg hover:bg-tech-orange-light">Case Studies</a>
-						<a href="/faq" class="text-tech-slate hover:text-tech-emerald transition-colors duration-200 font-medium py-2 px-3 rounded-lg hover:bg-tech-emerald-light">FAQ</a>
+						<a href="/" class="text-tech-charcoal hover:text-tech-blue transition-colors duration-200 font-medium py-2 px-3 rounded-lg hover:bg-tech-blue-light">Home</a>
+						<a href="/about" class="text-tech-charcoal hover:text-tech-purple transition-colors duration-200 font-medium py-2 px-3 rounded-lg hover:bg-tech-purple-light">About</a>
+						<a href="/services" class="text-tech-charcoal hover:text-tech-teal transition-colors duration-200 font-medium py-2 px-3 rounded-lg hover:bg-tech-teal-light">Services</a>
+						<a href="/case-studies" class="text-tech-charcoal hover:text-tech-orange transition-colors duration-200 font-medium py-2 px-3 rounded-lg hover:bg-tech-orange-light">Case Studies</a>
+						<a href="/faq" class="text-tech-charcoal hover:text-tech-emerald transition-colors duration-200 font-medium py-2 px-3 rounded-lg hover:bg-tech-emerald-light">FAQ</a>
 						<a href="/contact" class="bg-gradient-to-r from-tech-blue to-tech-purple text-white px-6 py-3 rounded-xl text-center font-medium shadow-soft">
 							Contact Us
 						</a>
@@ -75,12 +162,12 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 		</nav>
 
 		<!-- Main Content -->
-		<main>
+		<main transition:name="main" class="relative z-10">
 			<slot />
 		</main>
 
 		<!-- Footer -->
-		<footer class="bg-tech-slate text-white mt-20 relative overflow-hidden">
+		<footer class="bg-tech-slate text-white mt-20 relative overflow-hidden" transition:name="footer">
 			<!-- Whimsical background elements -->
 			<div class="absolute inset-0 opacity-10">
 				<div class="absolute top-10 left-10 w-20 h-20 bg-tech-blue rounded-full animate-float"></div>
@@ -121,8 +208,8 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 					<div class="space-y-6">
 						<h3 class="font-display font-semibold text-xl text-white">Get In Touch</h3>
 						<div class="space-y-4">
-							<a href="mailto:Casey@donutcove.com" class="text-gray-300 hover:text-tech-blue transition-colors duration-200 block text-lg hover:translate-x-1 transform">
-								📧 Casey@donutcove.com
+							<a href="mailto:info@donutcove.com" class="text-gray-300 hover:text-tech-blue transition-colors duration-200 block text-lg hover:translate-x-1 transform">
+								📧 info@donutcove.com
 							</a>
 							<a href="/contact" class="inline-flex items-center text-tech-blue hover:text-tech-purple transition-colors duration-200 text-lg font-medium group">
 								Contact Form
@@ -134,8 +221,8 @@ const { title, description = "Donut Cove Consulting - Software Development Solut
 					</div>
 				</div>
 				
-				<div class="border-t border-gray-700 mt-12 pt-8 text-center">
-					<p class="text-gray-300 text-lg">&copy; 2024 Donut Cove Consulting. Made with 💜 and lots of ☕</p>
+				<div class="border-t border-gray-700 mt-8 pt-8 text-center">
+					<p class="text-gray-300 text-lg">&copy; 2025 Donut Cove Consulting</p>
 				</div>
 			</div>
 		</footer>
