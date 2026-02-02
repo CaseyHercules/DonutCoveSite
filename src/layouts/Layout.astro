@@ -5,417 +5,135 @@ import Navigation from '../components/Navigation.astro';
 export interface Props {
 	title: string;
 	description?: string;
+	image?: string;
 }
 
-const { title, description = "Donut Cove Consulting - Software Development Solutions that Make Work Meaningful" } = Astro.props;
+const { 
+	title, 
+	description = "Donut Cove Consulting - Software Development That Makes Work Delightful",
+	image = "/og-image.jpg" // Default OG image
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, "https://donutcove.com");
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth antialiased">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
 		
-		<!-- Google Fonts -->
+		<!-- SEO -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={image} />
+		
+		<!-- Google Fonts: Inter & Fraunces -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 		
-		<!-- ClientRouter for View Transitions -->
 		<ClientRouter />
 		
-		<style>
-			/* Clean view transition styles */
-			::view-transition-old(root),
-			::view-transition-new(root) {
-				animation-duration: 400ms;
-				animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+		<style is:global>
+			/* Soft Editorial Reset & Base */
+			:root {
+				--color-canvas: #FDFBF7;
+				--color-ink: #292524;
+				--color-accent: #D97706;
 			}
 			
-			::view-transition-old(root) {
-				animation-name: slide-out;
+			.dark {
+				--color-canvas: #1C1917;
+				--color-ink: #E7E5E4;
 			}
-			
-			::view-transition-new(root) {
-				animation-name: slide-in;
+
+			html {
+				background-color: var(--color-canvas);
+				color: var(--color-ink);
 			}
-			
-			@keyframes slide-out {
-				to { transform: translateX(-100%); }
-			}
-			
-			@keyframes slide-in {
-				from { transform: translateX(100%); }
-			}
-			
-			/* Modern Navigation Styles */
-			.main-nav {
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				z-index: 1000;
-				background: rgba(255, 255, 255, 0.9);
-				backdrop-filter: blur(20px);
-				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-				transition: all 0.3s ease;
-			}
-			
-			.main-nav.scrolled {
-				background: rgba(255, 255, 255, 0.95);
-				backdrop-filter: blur(24px);
-				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-			}
-			
-			.nav-container {
-				max-width: 1280px;
-				margin: 0 auto;
-				padding: 0 1rem;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				height: 80px;
-			}
-			
-			.logo {
-				display: flex;
-				align-items: center;
-				gap: 12px;
-				text-decoration: none;
-				transition: transform 0.2s ease;
-			}
-			
-			.logo:hover {
-				transform: scale(1.02);
-			}
-			
-			.logo-icon {
-				width: 48px;
-				height: 48px;
-				background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-				border-radius: 12px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 24px;
-				transition: all 0.3s ease;
-				position: relative;
-				overflow: hidden;
-			}
-			
-			.logo:hover .logo-icon {
-				transform: rotate(6deg) scale(1.1);
-				box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
-			}
-			
-			.logo-icon::before {
-				content: '';
-				position: absolute;
-				inset: 0;
-				background: linear-gradient(135deg, #ec4899, #f97316);
-				opacity: 0;
-				transition: opacity 0.3s ease;
-			}
-			
-			.logo:hover .logo-icon::before {
-				opacity: 0.2;
-			}
-			
-			.logo-text {
-				font-family: 'Inter', sans-serif;
-				font-weight: 700;
-				font-size: 20px;
-				background: linear-gradient(135deg, #3b82f6, #8b5cf6, #14b8a6);
-				background-clip: text;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				transition: all 0.3s ease;
-			}
-			
-			.logo:hover .logo-text {
-				background: linear-gradient(135deg, #ec4899, #f97316, #10b981);
-				background-clip: text;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-			
-			.desktop-nav {
-				display: none;
-				align-items: center;
-				gap: 2rem;
-			}
-			
-			@media (min-width: 1024px) {
-				.desktop-nav {
-					display: flex;
-				}
-			}
-			
-			.nav-link {
-				text-decoration: none;
-				color: #374151;
-				font-weight: 500;
-				font-size: 16px;
-				padding: 8px 16px;
-				border-radius: 8px;
-				transition: all 0.2s ease;
-				position: relative;
-			}
-			
-			.nav-link:hover {
-				color: #3b82f6;
-				background: rgba(59, 130, 246, 0.1);
-				transform: translateY(-1px);
-			}
-			
-			.cta-button {
-				background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-				color: white;
-				padding: 12px 24px;
-				border-radius: 12px;
-				text-decoration: none;
-				font-weight: 600;
-				font-size: 16px;
-				transition: all 0.3s ease;
-				box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-			}
-			
-			.cta-button:hover {
-				transform: translateY(-2px);
-				box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-				background: linear-gradient(135deg, #2563eb, #7c3aed);
-			}
-			
-			.mobile-menu-button {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				width: 48px;
-				height: 48px;
-				border: none;
-				background: none;
-				cursor: pointer;
-				border-radius: 8px;
-				transition: all 0.2s ease;
-			}
-			
-			@media (min-width: 1024px) {
-				.mobile-menu-button {
-					display: none;
-				}
-			}
-			
-			.mobile-menu-button:hover {
-				background: rgba(59, 130, 246, 0.1);
-			}
-			
-			.mobile-menu {
-				position: absolute;
-				top: 100%;
-				left: 0;
-				right: 0;
-				background: rgba(255, 255, 255, 0.95);
-				backdrop-filter: blur(24px);
-				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-				opacity: 0;
-				visibility: hidden;
-				transform: translateY(-20px);
-				transition: all 0.3s ease;
-			}
-			
-			.mobile-menu.open {
-				opacity: 1;
-				visibility: visible;
-				transform: translateY(0);
-			}
-			
-			.mobile-nav {
-				padding: 1.5rem 1rem;
+
+			body {
+				background-color: var(--color-canvas);
+				color: var(--color-ink);
+				min-height: 100vh;
 				display: flex;
 				flex-direction: column;
-				gap: 1rem;
 			}
-			
-			.mobile-nav-link {
-				text-decoration: none;
-				color: #374151;
-				font-weight: 500;
-				font-size: 18px;
-				padding: 12px 16px;
-				border-radius: 8px;
-				transition: all 0.2s ease;
-			}
-			
-			.mobile-nav-link:hover {
-				color: #3b82f6;
-				background: rgba(59, 130, 246, 0.1);
-			}
-			
-			.mobile-cta {
-				background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+
+			/* Custom Selection Color */
+			::selection {
+				background-color: var(--color-accent);
 				color: white;
-				padding: 16px 24px;
-				border-radius: 12px;
-				text-decoration: none;
-				font-weight: 600;
-				font-size: 18px;
-				text-align: center;
-				margin-top: 8px;
-			}
-			
-			/* Hamburger icon animation */
-			.hamburger {
-				width: 24px;
-				height: 24px;
-				position: relative;
-				transform: rotate(0deg);
-				transition: 0.3s ease-in-out;
-				cursor: pointer;
-			}
-			
-			.hamburger span {
-				display: block;
-				position: absolute;
-				height: 3px;
-				width: 100%;
-				background: #374151;
-				border-radius: 3px;
-				opacity: 1;
-				left: 0;
-				transform: rotate(0deg);
-				transition: 0.25s ease-in-out;
-			}
-			
-			.hamburger span:nth-child(1) {
-				top: 0px;
-			}
-			
-			.hamburger span:nth-child(2),
-			.hamburger span:nth-child(3) {
-				top: 10px;
-			}
-			
-			.hamburger span:nth-child(4) {
-				top: 20px;
-			}
-			
-			.hamburger.open span:nth-child(1) {
-				top: 11px;
-				width: 0%;
-				left: 50%;
-			}
-			
-			.hamburger.open span:nth-child(2) {
-				transform: rotate(45deg);
-			}
-			
-			.hamburger.open span:nth-child(3) {
-				transform: rotate(-45deg);
-			}
-			
-			.hamburger.open span:nth-child(4) {
-				top: 11px;
-				width: 0%;
-				left: 50%;
-			}
-			
-			/* Fix background gradient */
-			html {
-				background: #f8fafc;
-				min-height: 100%;
-			}
-			
-			body {
-				background: transparent;
-				min-height: 100vh;
-				padding-top: 80px; /* Account for fixed header */
 			}
 		</style>
 	</head>
-	<body>
+	<body class="bg-canvas dark:bg-canvas-dark text-ink dark:text-ink-dark transition-colors duration-300">
 		<!-- Navigation Component -->
 		<Navigation />
 
 		<!-- Content Layer -->
-		<div>
-			<main class="relative">
-				<slot />
-			</main>
-		</div>
+		<main class="flex-grow pt-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+			<slot />
+		</main>
 
-		<!-- Footer with transition:name for smooth transitions -->
-		<footer class="bg-tech-slate text-white mt-20 relative overflow-hidden" transition:name="footer">
-			<!-- Whimsical background elements -->
-			<div class="absolute inset-0 opacity-10">
-				<div class="absolute top-10 left-10 w-20 h-20 bg-tech-blue rounded-full animate-float"></div>
-				<div class="absolute top-32 right-20 w-16 h-16 bg-tech-purple rounded-full animate-bounce-gentle" style="animation-delay: 1s;"></div>
-				<div class="absolute bottom-20 left-1/4 w-12 h-12 bg-tech-teal rounded-full animate-float" style="animation-delay: 2s;"></div>
-				<div class="absolute bottom-32 right-1/3 w-14 h-14 bg-tech-pink rounded-full animate-bounce-gentle" style="animation-delay: 0.5s;"></div>
-			</div>
-			
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-					<!-- Logo & Mission -->
-					<div class="space-y-6">
-						<div class="flex items-center space-x-3 group">
-							<div class="w-10 h-10 bg-gradient-to-br from-tech-blue to-tech-purple rounded-xl flex items-center justify-center shadow-soft group-hover:animate-wiggle">
-								<span class="text-white text-lg">🍩</span>
-							</div>
-							<span class="font-display font-bold text-xl text-white">
-								Donut Cove Consulting
-							</span>
-						</div>
-						<p class="text-gray-300 leading-relaxed text-lg">
-							Making work delightful through thoughtful software solutions.
+		<!-- Structural Footer -->
+		<footer class="border-t border-ink/10 dark:border-ink-dark/10 mt-32 py-16" transition:name="footer">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+					<!-- Brand -->
+					<div class="col-span-1 md:col-span-2">
+						<span class="font-display font-black text-2xl tracking-tight">
+							Donut Cove.
+						</span>
+						<p class="mt-4 text-ink-muted dark:text-ink-muted-dark max-w-md text-sm leading-relaxed">
+							Software development. Structural integrity. Human delight.<br>
+							Based in Chicago, operating globally.
 						</p>
 					</div>
 					
-					<!-- Quick Links -->
-					<div class="space-y-6">
-						<h3 class="font-display font-semibold text-xl text-white">Quick Links</h3>
-						<div class="space-y-3">
-							<a href="/about" class="text-gray-300 hover:text-tech-blue transition-colors duration-200 block text-lg hover:translate-x-1 transform">About Us</a>
-							<a href="/services" class="text-gray-300 hover:text-tech-purple transition-colors duration-200 block text-lg hover:translate-x-1 transform">Services</a>
-							<a href="/case-studies" class="text-gray-300 hover:text-tech-teal transition-colors duration-200 block text-lg hover:translate-x-1 transform">Case Studies</a>
-							<a href="/faq" class="text-gray-300 hover:text-tech-emerald transition-colors duration-200 block text-lg hover:translate-x-1 transform">FAQ</a>
-						</div>
+					<!-- Links -->
+					<div class="space-y-4">
+						<h3 class="font-mono text-xs uppercase tracking-widest text-ink-muted dark:text-ink-muted-dark">Explore</h3>
+						<nav class="flex flex-col space-y-2">
+							<a href="/services" class="hover:text-accent-pop transition-colors">Services</a>
+							<a href="/work" class="hover:text-accent-pop transition-colors">Work</a>
+							<a href="/about" class="hover:text-accent-pop transition-colors">About</a>
+						</nav>
 					</div>
 					
-					<!-- Contact Info -->
-					<div class="space-y-6">
-						<h3 class="font-display font-semibold text-xl text-white">Get In Touch</h3>
-						<div class="space-y-4">
-							<a href="mailto:info@donutcove.com" class="text-gray-300 hover:text-tech-blue transition-colors duration-200 block text-lg hover:translate-x-1 transform">
-								📧 info@donutcove.com
-							</a>
-							<a href="/contact" class="inline-flex items-center text-tech-blue hover:text-tech-purple transition-colors duration-200 text-lg font-medium group">
-								Contact Form
-								<svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-								</svg>
-							</a>
-						</div>
+					<!-- Contact -->
+					<div class="space-y-4">
+						<h3 class="font-mono text-xs uppercase tracking-widest text-ink-muted dark:text-ink-muted-dark">Connect</h3>
+						<nav class="flex flex-col space-y-2">
+							<a href="mailto:info@donutcove.com" class="hover:text-accent-pop transition-colors">info@donutcove.com</a>
+							<a href="#" class="hover:text-accent-pop transition-colors">LinkedIn</a>
+							<a href="#" class="hover:text-accent-pop transition-colors">GitHub</a>
+						</nav>
 					</div>
 				</div>
 				
-				<div class="border-t border-gray-700 mt-8 pt-8 text-center">
-					<p class="text-gray-300 text-lg">&copy; 2025 Donut Cove Consulting</p>
+				<div class="mt-16 pt-8 border-t border-ink/5 dark:border-ink-dark/5 flex justify-between items-center text-xs font-mono text-ink-muted dark:text-ink-muted-dark">
+					<p>&copy; {new Date().getFullYear()} Donut Cove Consulting.</p>
+					<p>EST. 2024</p>
 				</div>
 			</div>
 		</footer>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
