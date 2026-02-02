@@ -7,19 +7,22 @@ import FAQSection from '../components/FAQSection.astro';
   title="FAQ - Donut Cove Consulting" 
   description="Frequently asked questions about Donut Cove Consulting's software development services, process, and approach to eliminating tedious tasks."
 >
-  <!-- Hero Section -->
-  <section class="py-20" transition:name="faq-hero">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center space-y-8">
-        <h1 class="font-display font-bold text-4xl md:text-6xl">
-          <span class="bg-gradient-to-r from-tech-blue via-tech-purple to-tech-teal bg-clip-text text-transparent">
-            Frequently Asked Questions
-          </span>
-        </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Get answers to common questions about our services, process, and approach to making work more meaningful.
-        </p>
-      </div>
+  <!-- Hero Section with Organic Blobs -->
+  <section class="relative pt-20 md:pt-32 pb-32 md:pb-48 overflow-hidden" transition:name="faq-hero">
+    <!-- Organic Background Blobs -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[80px] animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="max-w-4xl relative z-10">
+      <h1 class="font-display font-black text-6xl md:text-8xl tracking-tight leading-[0.95] text-ink dark:text-ink-dark mb-8 drop-shadow-sm">
+        Frequently<br />
+        <span class="text-coral-vibrant italic">Asked Questions</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-ink/80 dark:text-ink-dark/80 max-w-2xl leading-relaxed font-medium">
+        Get answers to common questions about our services, process, and approach to making work more meaningful.
+      </p>
     </div>
   </section>
 
@@ -31,23 +34,21 @@ import FAQSection from '../components/FAQSection.astro';
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-br from-white via-tech-blue-light/30 to-tech-purple-light/40 relative overflow-hidden">
-    <!-- Whimsical background elements -->
-    <div class="absolute inset-0 opacity-15">
-      <div class="absolute top-20 left-20 w-16 h-16 bg-tech-pink/40 rounded-full animate-float"></div>
-      <div class="absolute top-40 right-32 w-12 h-12 bg-tech-orange/40 rounded-full animate-bounce-gentle" style="animation-delay: 1s;"></div>
-      <div class="absolute bottom-32 left-1/4 w-20 h-20 bg-tech-blue/30 rounded-full animate-float" style="animation-delay: 2s;"></div>
-      <div class="absolute bottom-20 right-20 w-14 h-14 bg-tech-purple/40 rounded-full animate-bounce-gentle" style="animation-delay: 0.5s;"></div>
+  <section class="py-32 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
     </div>
     
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
-      <h2 class="font-display font-bold text-3xl md:text-4xl text-tech-charcoal">
-        Still Have Questions?
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 relative z-10">
+      <h2 class="font-display font-black text-5xl md:text-7xl tracking-tight text-ink dark:text-ink-dark">
+        Still Have<br />
+        <span class="text-coral-vibrant italic">Questions?</span>
       </h2>
-      <p class="text-xl text-tech-slate leading-relaxed max-w-3xl mx-auto">
+      <p class="text-xl text-ink/80 dark:text-ink-dark/80 leading-relaxed max-w-3xl mx-auto">
         We'd love to discuss your specific needs and how we can help streamline your operations. Let's have a conversation!
       </p>
-      <a href="/contact" class="inline-block bg-gradient-to-r from-tech-blue-dark to-tech-purple-dark text-white px-12 py-4 rounded-xl font-semibold text-lg hover:shadow-glow-purple transform hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact" class="inline-block bg-coral-vibrant text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-coral hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-coral/20">
         Get In Touch
       </a>
     </div>

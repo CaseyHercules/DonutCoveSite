@@ -6,19 +6,22 @@ import Layout from '../layouts/Layout.astro';
   title="Services - Donut Cove Consulting" 
   description="Custom software development solutions including process automation, custom applications, and system integrations for small to medium businesses."
 >
-  <!-- Hero Section -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center space-y-8">
-        <h1 class="font-display font-bold text-4xl md:text-6xl">
-          <span class="bg-gradient-to-r from-tech-blue via-tech-purple to-tech-teal bg-clip-text text-transparent">
-            Our Services
-          </span>
-        </h1>
-        <p class="text-xl text-tech-slate max-w-3xl mx-auto leading-relaxed">
-            Custom software development solutions including process automation, custom applications, and system integrations for small to medium businesses
-        </p>
-      </div>
+  <!-- Hero Section with Organic Blobs -->
+  <section class="relative pt-20 md:pt-32 pb-32 md:pb-48 overflow-hidden">
+    <!-- Organic Background Blobs -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[80px] animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="max-w-4xl relative z-10">
+      <h1 class="font-display font-black text-6xl md:text-8xl tracking-tight leading-[0.95] text-ink dark:text-ink-dark mb-8 drop-shadow-sm">
+        Our<br />
+        <span class="text-coral-vibrant italic">Services</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-ink/80 dark:text-ink-dark/80 max-w-2xl leading-relaxed font-medium">
+        Custom software development solutions including process automation, custom applications, and system integrations for small to medium businesses.
+      </p>
     </div>
   </section>
 
@@ -30,83 +33,85 @@ import Layout from '../layouts/Layout.astro';
         <!-- Service 1: Process Automation -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div class="space-y-8">
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-tech-charcoal">
-              Process Automation
+            <h2 class="font-display font-black text-4xl md:text-5xl tracking-tight text-ink dark:text-ink-dark">
+              Process<br />
+              <span class="text-coral-vibrant italic">Automation</span>
             </h2>
-            <p class="text-lg text-tech-slate leading-relaxed">
+            <p class="text-lg text-ink/70 dark:text-ink-dark/70 leading-relaxed">
               Transform repetitive, manual tasks into streamlined automated workflows. We identify bottlenecks in your current processes and build intelligent solutions that reduce errors, save time, and free your team to focus on strategic initiatives.
             </p>
             
             <div class="space-y-4">
               <div class="flex items-start space-x-3">
-                <div class="flex-shrink-0 w-6 h-6 bg-tech-pink rounded-full flex items-center justify-center mt-0.5">
-                  <div class="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span class="text-tech-slate font-medium">Workflow automation systems</span>
+                <span class="w-2 h-2 rounded-full bg-coral mt-2 flex-shrink-0"></span>
+                <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Workflow automation systems</span>
               </div>
               <div class="flex items-start space-x-3">
-                <div class="flex-shrink-0 w-6 h-6 bg-tech-pink rounded-full flex items-center justify-center mt-0.5">
-                  <div class="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span class="text-tech-slate font-medium">Data processing pipelines</span>
+                <span class="w-2 h-2 rounded-full bg-coral mt-2 flex-shrink-0"></span>
+                <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Data processing pipelines</span>
               </div>
               <div class="flex items-start space-x-3">
-                <div class="flex-shrink-0 w-6 h-6 bg-tech-pink rounded-full flex items-center justify-center mt-0.5">
-                  <div class="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span class="text-tech-slate font-medium">System integrations and API connections</span>
+                <span class="w-2 h-2 rounded-full bg-coral mt-2 flex-shrink-0"></span>
+                <span class="text-ink/70 dark:text-ink-dark/70 font-medium">System integrations and API connections</span>
               </div>
             </div>
           </div>
           
-          <div class="hidden lg:block lg:order-last ">
-            <div class="w-full h-80 bg-gradient-to-br from-tech-pink-light to-tech-teal-light rounded-3xl flex items-center justify-center relative overflow-hidden shadow-large border border-tech-border">
-              <div class="relative z-10 text-6xl animate-float">🔄</div>
-              <div class="absolute top-8 left-8 w-4 h-4 bg-tech-teal rounded-full animate-bounce-gentle"></div>
-              <div class="absolute bottom-12 right-12 w-5 h-5 bg-tech-pink rounded-full animate-float" style="animation-delay: 1s;"></div>
+          <div class="hidden lg:block lg:order-last relative">
+            <div class="w-full h-80 bg-white dark:bg-white/5 rounded-[2rem] p-12 shadow-xl shadow-coral/5 border border-coral/10 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-coral-light/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <div class="relative z-10 h-full flex flex-col justify-center">
+                <h3 class="font-display font-bold text-2xl text-ink dark:text-ink-dark mb-4">
+                  Streamlined Workflows
+                </h3>
+                <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed">
+                  Eliminate manual processes and build resilient automation infrastructure.
+                </p>
+              </div>
             </div>
           </div>
         </div>
         
         <!-- Service 2: Custom Applications -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div class="space-y-8">
+          <div class="hidden lg:block lg:order-1 relative">
+            <div class="w-full h-80 bg-white dark:bg-white/5 rounded-[2rem] p-12 shadow-xl shadow-indigo/5 border border-indigo/10 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-64 h-64 bg-indigo/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+              <div class="relative z-10 h-full flex flex-col justify-center">
+                <h3 class="font-display font-bold text-2xl text-ink dark:text-ink-dark mb-4">
+                  Tailored Solutions
+                </h3>
+                <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed">
+                  Built for your specific business logic. Scalable, secure, and maintainable.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="space-y-8 lg:order-2">
             <div class="space-y-6">
-              <h3 class="font-display font-bold text-3xl md:text-4xl text-tech-charcoal leading-tight">
-                Custom Application Development
+              <h3 class="font-display font-black text-4xl md:text-5xl tracking-tight text-ink dark:text-ink-dark leading-tight">
+                Custom<br />
+                <span class="text-indigo italic">Applications</span>
               </h3>
-              <p class="text-xl text-tech-slate leading-relaxed">
+              <p class="text-xl text-ink/70 dark:text-ink-dark/70 leading-relaxed">
                 When off-the-shelf software doesn't fit your unique business requirements, we create tailored applications that perfectly match your workflows and growth objectives.
               </p>
             </div>
             
             <div class="space-y-4">
               <div class="flex items-start space-x-3">
-                <div class="flex-shrink-0 w-6 h-6 bg-tech-teal rounded-full flex items-center justify-center mt-0.5">
-                  <div class="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span class="text-tech-slate font-medium">Web applications and dashboards</span>
+                <span class="w-2 h-2 rounded-full bg-indigo mt-2 flex-shrink-0"></span>
+                <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Web applications and dashboards</span>
               </div>
               <div class="flex items-start space-x-3">
-                <div class="flex-shrink-0 w-6 h-6 bg-tech-teal rounded-full flex items-center justify-center mt-0.5">
-                  <div class="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span class="text-tech-slate font-medium">API development and microservices</span>
+                <span class="w-2 h-2 rounded-full bg-indigo mt-2 flex-shrink-0"></span>
+                <span class="text-ink/70 dark:text-ink-dark/70 font-medium">API development and microservices</span>
               </div>
               <div class="flex items-start space-x-3">
-                <div class="flex-shrink-0 w-6 h-6 bg-tech-teal rounded-full flex items-center justify-center mt-0.5">
-                  <div class="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span class="text-tech-slate font-medium">Database design and optimization</span>
+                <span class="w-2 h-2 rounded-full bg-indigo mt-2 flex-shrink-0"></span>
+                <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Database design and optimization</span>
               </div>
-            </div>
-          </div>
-          
-          <div class="hidden lg:block lg:order-2">
-            <div class="w-full h-80 bg-gradient-to-br from-tech-teal-light to-tech-emerald-light rounded-3xl flex items-center justify-center relative overflow-hidden shadow-large border border-tech-border">
-              <div class="relative z-10 text-6xl animate-float">🎨</div>
-              <div class="absolute top-12 right-8 w-3 h-3 bg-tech-emerald rounded-full animate-bounce-gentle"></div>
-              <div class="absolute bottom-8 left-12 w-5 h-5 bg-tech-teal rounded-full animate-float" style="animation-delay: 2s;"></div>
             </div>
           </div>
         </div>
@@ -115,41 +120,42 @@ import Layout from '../layouts/Layout.astro';
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div class="space-y-8">
             <div class="space-y-6">
-              <h3 class="font-display font-bold text-3xl md:text-4xl text-tech-charcoal leading-tight">
-                System Integration & APIs
+              <h3 class="font-display font-black text-4xl md:text-5xl tracking-tight text-ink dark:text-ink-dark leading-tight">
+                System<br />
+                <span class="text-coral-vibrant italic">Integration</span>
               </h3>
-              <p class="text-xl text-tech-slate leading-relaxed">
+              <p class="text-xl text-ink/70 dark:text-ink-dark/70 leading-relaxed">
                 Connect your existing tools and systems to create seamless data flow and eliminate manual data entry between platforms.
               </p>
             </div>
             
             <div class="space-y-4">
               <div class="flex items-start space-x-3">
-                <div class="flex-shrink-0 w-6 h-6 bg-tech-emerald rounded-full flex items-center justify-center mt-0.5">
-                  <div class="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span class="text-tech-slate font-medium">Third-party API integrations</span>
+                <span class="w-2 h-2 rounded-full bg-coral mt-2 flex-shrink-0"></span>
+                <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Third-party API integrations</span>
               </div>
               <div class="flex items-start space-x-3">
-                <div class="flex-shrink-0 w-6 h-6 bg-tech-emerald rounded-full flex items-center justify-center mt-0.5">
-                  <div class="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span class="text-tech-slate font-medium">Legacy system modernization</span>
+                <span class="w-2 h-2 rounded-full bg-coral mt-2 flex-shrink-0"></span>
+                <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Legacy system modernization</span>
               </div>
               <div class="flex items-start space-x-3">
-                <div class="flex-shrink-0 w-6 h-6 bg-tech-emerald rounded-full flex items-center justify-center mt-0.5">
-                  <div class="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span class="text-tech-slate font-medium">Real-time data synchronization</span>
+                <span class="w-2 h-2 rounded-full bg-coral mt-2 flex-shrink-0"></span>
+                <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Real-time data synchronization</span>
               </div>
             </div>
           </div>
           
-          <div class="hidden lg:block lg:order-last">
-            <div class="w-full h-80 bg-gradient-to-br from-tech-emerald-light to-tech-pink-light rounded-3xl flex items-center justify-center relative overflow-hidden shadow-large border border-tech-border">
-              <div class="relative z-10 text-6xl animate-float">🔗</div>
-              <div class="absolute top-16 left-16 w-4 h-4 bg-tech-pink rounded-full animate-bounce-gentle"></div>
-              <div class="absolute bottom-16 right-8 w-6 h-6 bg-tech-emerald rounded-full animate-float" style="animation-delay: 0.5s;"></div>
+          <div class="hidden lg:block lg:order-last relative">
+            <div class="w-full h-80 bg-white dark:bg-white/5 rounded-[2rem] p-12 shadow-xl shadow-indigo/5 border border-indigo/10 relative overflow-hidden">
+              <div class="absolute bottom-0 right-0 w-64 h-64 bg-indigo/20 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
+              <div class="relative z-10 h-full flex flex-col justify-center">
+                <h3 class="font-display font-bold text-2xl text-ink dark:text-ink-dark mb-4">
+                  Seamless Connections
+                </h3>
+                <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed">
+                  Bridge systems and eliminate data silos with intelligent integrations.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -158,54 +164,60 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Process Section -->
-  <section class="py-20 ">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-24 relative">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center space-y-6 mb-20">
-        <h2 class="font-display font-bold text-4xl md:text-5xl text-tech-charcoal">
-          Our Development Process
+        <h2 class="font-display font-black text-5xl md:text-6xl tracking-tight text-ink dark:text-ink-dark">
+          Our<br />
+          <span class="text-coral-vibrant italic">Process</span>
         </h2>
-        <p class="text-xl text-tech-slate max-w-4xl mx-auto leading-relaxed">
+        <p class="text-xl text-ink/80 dark:text-ink-dark/80 max-w-4xl mx-auto leading-relaxed">
           A proven methodology that ensures your project delivers real value and exceeds expectations.
         </p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="text-center space-y-6 p-8 rounded-2xl bg-gradient-to-br from-tech-pink-light to-white hover:shadow-glow transform hover:-translate-y-2 transition-all duration-300 border border-tech-pink/10">
-          <div class="w-16 h-16 mx-auto bg-gradient-to-br from-tech-pink to-tech-pink-dark rounded-full flex items-center justify-center text-white text-2xl font-bold">
+        <div class="text-center space-y-6 p-8 rounded-2xl bg-white dark:bg-white/5 hover:shadow-xl hover:shadow-coral/10 hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-coral/20">
+          <div class="w-16 h-16 mx-auto bg-coral rounded-full flex items-center justify-center text-white text-2xl font-bold">
             1
           </div>
-          <h3 class="font-display font-semibold text-xl text-tech-charcoal">Discovery</h3>
-          <p class="text-tech-slate leading-relaxed">
+          <h3 class="font-display font-semibold text-xl text-ink dark:text-ink-dark">Discovery</h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed">
             We dive deep into your workflows, pain points, and objectives to understand exactly what success looks like.
           </p>
         </div>
         
-        <div class="text-center space-y-6 p-8 rounded-2xl bg-gradient-to-br from-tech-teal-light to-white hover:shadow-glow-teal transform hover:-translate-y-2 transition-all duration-300 border border-tech-teal/10">
-          <div class="w-16 h-16 mx-auto bg-gradient-to-br from-tech-teal to-tech-teal-dark rounded-full flex items-center justify-center text-white text-2xl font-bold">
+        <div class="text-center space-y-6 p-8 rounded-2xl bg-white dark:bg-white/5 hover:shadow-xl hover:shadow-indigo/10 hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-indigo/20">
+          <div class="w-16 h-16 mx-auto bg-indigo rounded-full flex items-center justify-center text-white text-2xl font-bold">
             2
           </div>
-          <h3 class="font-display font-semibold text-xl text-tech-charcoal">Strategy</h3>
-          <p class="text-tech-slate leading-relaxed">
+          <h3 class="font-display font-semibold text-xl text-ink dark:text-ink-dark">Strategy</h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed">
             We design a solution architecture that fits your current needs while providing room for future growth.
           </p>
         </div>
         
-        <div class="text-center space-y-6 p-8 rounded-2xl bg-gradient-to-br from-tech-emerald-light to-white hover:shadow-glow transform hover:-translate-y-2 transition-all duration-300 border border-tech-emerald/10">
-          <div class="w-16 h-16 mx-auto bg-gradient-to-br from-tech-emerald to-tech-emerald-dark rounded-full flex items-center justify-center text-white text-2xl font-bold">
+        <div class="text-center space-y-6 p-8 rounded-2xl bg-white dark:bg-white/5 hover:shadow-xl hover:shadow-coral/10 hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-coral/20">
+          <div class="w-16 h-16 mx-auto bg-coral rounded-full flex items-center justify-center text-white text-2xl font-bold">
             3
           </div>
-          <h3 class="font-display font-semibold text-xl text-tech-charcoal">Development</h3>
-          <p class="text-tech-slate leading-relaxed">
+          <h3 class="font-display font-semibold text-xl text-ink dark:text-ink-dark">Development</h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed">
             Using agile methodology, we build your solution iteratively with regular check-ins and feedback sessions.
           </p>
         </div>
         
-        <div class="text-center space-y-6 p-8 rounded-2xl bg-gradient-to-br from-tech-purple-light to-white hover:shadow-glow-purple transform hover:-translate-y-2 transition-all duration-300 border border-tech-purple/10">
-          <div class="w-16 h-16 mx-auto bg-gradient-to-br from-tech-purple to-tech-purple-dark rounded-full flex items-center justify-center text-white text-2xl font-bold">
+        <div class="text-center space-y-6 p-8 rounded-2xl bg-white dark:bg-white/5 hover:shadow-xl hover:shadow-indigo/10 hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-indigo/20">
+          <div class="w-16 h-16 mx-auto bg-indigo rounded-full flex items-center justify-center text-white text-2xl font-bold">
             4
           </div>
-          <h3 class="font-display font-semibold text-xl text-tech-charcoal">Launch & Support</h3>
-          <p class="text-tech-slate leading-relaxed">
+          <h3 class="font-display font-semibold text-xl text-ink dark:text-ink-dark">Launch & Support</h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed">
             We ensure smooth deployment and provide ongoing support to maximize your investment's value.
           </p>
         </div>
@@ -214,23 +226,21 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-br from-white via-tech-blue-light/30 to-tech-purple-light/40 relative overflow-hidden">
-    <!-- Whimsical background elements -->
-    <div class="absolute inset-0 opacity-15">
-      <div class="absolute top-20 left-20 w-16 h-16 bg-tech-pink/40 rounded-full animate-float"></div>
-      <div class="absolute top-40 right-32 w-12 h-12 bg-tech-orange/40 rounded-full animate-bounce-gentle" style="animation-delay: 1s;"></div>
-      <div class="absolute bottom-32 left-1/4 w-20 h-20 bg-tech-blue/30 rounded-full animate-float" style="animation-delay: 2s;"></div>
-      <div class="absolute bottom-20 right-20 w-14 h-14 bg-tech-purple/40 rounded-full animate-bounce-gentle" style="animation-delay: 0.5s;"></div>
+  <section class="py-32 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
     </div>
     
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
-      <h2 class="font-display font-bold text-3xl md:text-4xl text-tech-charcoal">
-        Ready to Streamline Your Operations?
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 relative z-10">
+      <h2 class="font-display font-black text-5xl md:text-7xl tracking-tight text-ink dark:text-ink-dark">
+        Ready to<br />
+        <span class="text-coral-vibrant italic">Streamline?</span>
       </h2>
-      <p class="text-xl text-tech-slate leading-relaxed max-w-3xl mx-auto">
+      <p class="text-xl text-ink/80 dark:text-ink-dark/80 leading-relaxed max-w-3xl mx-auto">
         Let's discuss how our services can help eliminate tedious tasks and empower your team to focus on work that truly matters.
       </p>
-      <a href="/contact" class="inline-block bg-gradient-to-r from-tech-blue-dark to-tech-purple-dark text-white px-12 py-4 rounded-xl font-semibold text-lg hover:shadow-glow-purple transform hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact" class="inline-block bg-coral-vibrant text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-coral hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-coral/20">
         Start Your Project
       </a>
     </div>

@@ -6,19 +6,22 @@ import Layout from '../layouts/Layout.astro';
   title="Contact Us - Donut Cove Consulting" 
   description="Get in touch with Donut Cove Consulting to discuss how we can help eliminate tedious tasks and make your team's work more meaningful."
 >
-  <!-- Hero Section -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center space-y-8">
-        <h1 class="font-display font-bold text-4xl md:text-6xl">
-          <span class="bg-gradient-to-r from-tech-blue via-tech-purple to-tech-teal bg-clip-text text-transparent">
-            Let's Make Work Sweet
-          </span>
-        </h1>
-        <p class="text-xl text-tech-slate max-w-3xl mx-auto leading-relaxed">
-          Ready to eliminate tedious tasks and help your team focus on meaningful work? We'd love to hear about your challenges and discuss how we can help.
-        </p>
-      </div>
+  <!-- Hero Section with Organic Blobs -->
+  <section class="relative pt-20 md:pt-32 pb-32 md:pb-48 overflow-hidden">
+    <!-- Organic Background Blobs -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[80px] animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="max-w-4xl relative z-10">
+      <h1 class="font-display font-black text-6xl md:text-8xl tracking-tight leading-[0.95] text-ink dark:text-ink-dark mb-8 drop-shadow-sm">
+        Let's Make<br />
+        <span class="text-coral-vibrant italic">Work Happen</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-ink/80 dark:text-ink-dark/80 max-w-2xl leading-relaxed font-medium">
+        Ready to eliminate tedious tasks and help your team focus on meaningful work? We'd love to hear about your challenges and discuss how we can help.
+      </p>
     </div>
   </section>
 
@@ -30,10 +33,10 @@ import Layout from '../layouts/Layout.astro';
         <!-- Contact Information -->
         <div class="space-y-8">
           <div class="space-y-6">
-            <h2 class="font-display font-bold text-3xl text-tech-charcoal">
+            <h2 class="font-display font-bold text-3xl text-ink dark:text-ink-dark">
               Get In Touch
             </h2>
-            <p class="text-lg text-tech-slate leading-relaxed">
+            <p class="text-lg text-ink/70 dark:text-ink-dark/70 leading-relaxed">
               We believe great software starts with great conversations. Let's discuss your team's pain points and explore how we can help make their work more enjoyable and meaningful.
             </p>
           </div>
@@ -41,45 +44,45 @@ import Layout from '../layouts/Layout.astro';
           <!-- Contact Methods -->
           <div class="space-y-6">
             <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-tech-pink to-tech-pink-dark rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="flex-shrink-0 w-14 h-14 bg-coral-vibrant rounded-full flex items-center justify-center shadow-lg" style="box-shadow: 0 10px 15px -3px rgba(255, 69, 0, 0.2);">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
               </div>
-              <div>
-                <h3 class="font-semibold text-lg text-tech-charcoal">Email</h3>
-                <p class="text-tech-slate">Drop us a line anytime</p>
-                <a href="mailto:info@donutcove.com" class="text-tech-pink-dark hover:text-tech-pink transition-colors font-medium">
+              <div class="flex-1">
+                <h3 class="font-display font-bold text-lg text-ink dark:text-ink-dark mb-1">Email</h3>
+                <p class="text-ink/70 dark:text-ink-dark/70 text-sm mb-2">Drop us a line anytime</p>
+                <a href="mailto:info@donutcove.com" class="text-coral-vibrant hover:text-coral transition-colors font-semibold">
                   info@donutcove.com
                 </a>
               </div>
             </div>
             
             <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-tech-teal to-tech-teal-dark rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="flex-shrink-0 w-14 h-14 bg-coral rounded-full flex items-center justify-center shadow-lg" style="box-shadow: 0 10px 15px -3px rgba(255, 127, 80, 0.2);">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               </div>
-              <div>
-                <h3 class="font-semibold text-lg text-tech-charcoal">Response Time</h3>
-                <p class="text-tech-slate">We typically respond within 24 hours</p>
-                <p class="text-tech-teal-dark font-medium">
+              <div class="flex-1">
+                <h3 class="font-display font-bold text-lg text-ink dark:text-ink-dark mb-1">Response Time</h3>
+                <p class="text-ink/70 dark:text-ink-dark/70 text-sm mb-2">We typically respond within 24 hours</p>
+                <p class="text-coral-vibrant font-semibold">
                   Usually much faster!
                 </p>
               </div>
             </div>
             
             <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-tech-emerald to-tech-emerald-dark rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h2m-4 3h12"></path>
+              <div class="flex-shrink-0 w-14 h-14 bg-coral-light rounded-full flex items-center justify-center shadow-lg" style="box-shadow: 0 10px 15px -3px rgba(255, 160, 122, 0.2);">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
               </div>
-              <div>
-                <h3 class="font-semibold text-lg text-tech-charcoal">Free Consultation</h3>
-                <p class="text-tech-slate">No pressure, no sales pitch</p>
-                <p class="text-tech-emerald-dark font-medium">
+              <div class="flex-1">
+                <h3 class="font-display font-bold text-lg text-ink dark:text-ink-dark mb-1">Free Consultation</h3>
+                <p class="text-ink/70 dark:text-ink-dark/70 text-sm mb-2">No pressure, no sales pitch</p>
+                <p class="text-coral-vibrant font-semibold">
                   Just genuine problem-solving
                 </p>
               </div>
@@ -87,37 +90,39 @@ import Layout from '../layouts/Layout.astro';
           </div>
           
           <!-- Decorative Element -->
-          <div class="hidden lg:block">
-            <div class="w-full h-48 bg-gradient-to-br from-tech-pink-light via-tech-teal-light to-tech-emerald-light rounded-3xl flex items-center justify-center relative overflow-hidden">
-              <div class="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
-              <div class="relative z-10 text-center space-y-4">
-                <div class="text-6xl animate-float">🍩</div>
-                <div class="text-lg font-display font-semibold text-tech-charcoal">
+          <div class="hidden lg:block relative">
+            <div class="w-full h-48 bg-white dark:bg-white/5 rounded-[2rem] p-8 shadow-xl shadow-indigo/5 border border-indigo/10 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-coral-light/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <div class="relative z-10 h-full flex flex-col justify-center text-center space-y-3">
+                <h3 class="text-2xl font-display font-bold text-ink dark:text-ink-dark">
                   Let's Chat!
-                </div>
+                </h3>
+                <p class="text-ink/70 dark:text-ink-dark/70">
+                  We're here to help solve your challenges
+                </p>
               </div>
-              <div class="absolute top-8 left-8 w-4 h-4 bg-tech-pink rounded-full animate-bounce-gentle"></div>
-              <div class="absolute bottom-8 right-8 w-5 h-5 bg-tech-teal rounded-full animate-float" style="animation-delay: 1s;"></div>
             </div>
           </div>
         </div>
         
         <!-- Contact Form -->
         <div class="bg-white rounded-3xl shadow-lg p-8 lg:p-12">
-          <h2 class="font-display font-bold text-2xl text-tech-charcoal mb-8">
+          <h2 class="font-display font-bold text-2xl text-ink dark:text-ink-dark mb-8">
             Tell Us About Your Project
           </h2>
           
           <form id="contact-form" action="/api/contact" method="POST" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label for="firstName" class="block text-sm font-medium text-tech-slate mb-2">
+                <label for="firstName" class="block text-sm font-medium text-ink/70 dark:text-ink-dark/70 mb-2">
                   First Name *
                 </label>
                 <input
                   type="text"
                   id="firstName"
                   name="firstName"
+                  required
+                  aria-required="true"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tech-teal focus:border-tech-teal transition-colors"
                   placeholder="John"
                 />
@@ -130,6 +135,8 @@ import Layout from '../layouts/Layout.astro';
                   type="text"
                   id="lastName"
                   name="lastName"
+                  required
+                  aria-required="true"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tech-teal focus:border-tech-teal transition-colors"
                   placeholder="Doe"
                 />
@@ -144,6 +151,9 @@ import Layout from '../layouts/Layout.astro';
                 type="email"
                 id="email"
                 name="email"
+                required
+                aria-required="true"
+                aria-invalid="false"
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tech-teal focus:border-tech-teal transition-colors"
                 placeholder="john@company.com"
               />
@@ -188,6 +198,8 @@ import Layout from '../layouts/Layout.astro';
                 id="message"
                 name="message"
                 rows="5"
+                required
+                aria-required="true"
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tech-teal focus:border-tech-teal transition-colors resize-none"
                 placeholder="What tedious tasks are slowing down your team? What would you like to automate or improve?"
               ></textarea>
@@ -203,20 +215,20 @@ import Layout from '../layouts/Layout.astro';
                   value="agreed"
                   class="mt-1 h-4 w-4 text-tech-blue border-gray-300 rounded focus:ring-tech-teal focus:ring-2"
                 />
-                <label for="privacy" class="text-sm text-tech-slate cursor-pointer">
+                <label for="privacy" class="text-sm text-ink/70 dark:text-ink-dark/70 cursor-pointer">
                   I agree to receive communications from Donut Cove Consulting about my inquiry. We respect your privacy and will never share your information.
                 </label>
               </div>
               
               <!-- Modern validation message -->
-              <div id="validation-message" class="hidden bg-gradient-to-r from-blue-50 to-purple-50 border-l-4 border-tech-blue p-4 rounded-lg">
+              <div id="validation-message" class="hidden bg-gradient-to-r from-blue-50 to-purple-50 border-l-4 border-tech-blue p-4 rounded-lg" role="alert" aria-live="polite">
                 <div class="flex items-center">
-                  <svg class="w-5 h-5 text-tech-blue mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="w-5 h-5 text-tech-blue mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
                   </svg>
                   <div>
-                    <h4 class="text-tech-charcoal font-semibold text-sm">Agreement Required</h4>
-                    <p class="text-tech-slate text-sm">Please agree to receive communications so we can respond to your inquiry.</p>
+                    <h4 class="text-ink dark:text-ink-dark font-semibold text-sm">Agreement Required</h4>
+                    <p class="text-ink/70 dark:text-ink-dark/70 text-sm">Please agree to receive communications so we can respond to your inquiry.</p>
                   </div>
                 </div>
               </div>
@@ -224,7 +236,8 @@ import Layout from '../layouts/Layout.astro';
             
             <button
               type="submit"
-              class="w-full bg-gradient-to-r from-tech-blue to-tech-purple text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-glow-purple transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              class="w-full bg-coral-vibrant text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-coral hover:-translate-y-1 transition-all duration-300 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:hover:bg-coral-vibrant"
+              style="box-shadow: 0 20px 25px -5px rgba(255, 69, 0, 0.2);"
               id="submit-btn"
             >
               <span id="button-text">Send Message</span>
@@ -239,27 +252,27 @@ import Layout from '../layouts/Layout.astro';
           </form>
           
           <!-- Success Message -->
-          <div id="success-message" class="hidden mt-6 p-4 bg-gradient-to-r from-blue-50 to-teal-50 border-l-4 border-tech-teal rounded-lg">
+          <div id="success-message" class="hidden mt-6 p-4 bg-gradient-to-r from-blue-50 to-teal-50 border-l-4 border-tech-teal rounded-lg" role="alert" aria-live="polite">
             <div class="flex items-center">
-              <svg class="w-5 h-5 text-tech-teal mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-tech-teal mr-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
               </svg>
               <div>
-                <h4 class="text-tech-charcoal font-semibold">Message Sent!</h4>
-                <p class="text-tech-slate" id="success-text">Thank you! We've received your message and will get back to you soon.</p>
+                <h4 class="text-ink dark:text-ink-dark font-semibold">Message Sent!</h4>
+                <p class="text-ink/70 dark:text-ink-dark/70" id="success-text">Thank you! We've received your message and will get back to you soon.</p>
               </div>
             </div>
           </div>
           
           <!-- Error Message -->
-          <div id="error-message" class="hidden mt-6 p-4 bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-tech-purple rounded-lg">
+          <div id="error-message" class="hidden mt-6 p-4 bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-tech-purple rounded-lg" role="alert" aria-live="assertive">
             <div class="flex items-center">
-              <svg class="w-5 h-5 text-tech-purple mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5 text-tech-purple mr-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
               </svg>
               <div>
-                <h4 class="text-tech-charcoal font-semibold">Something went wrong</h4>
-                <p class="text-tech-slate" id="error-text">Please try again or email us directly at info@donutcove.com</p>
+                <h4 class="text-ink dark:text-ink-dark font-semibold">Something went wrong</h4>
+                <p class="text-ink/70 dark:text-ink-dark/70" id="error-text">Please try again or email us directly at info@donutcove.com</p>
               </div>
             </div>
           </div>
@@ -311,7 +324,8 @@ import Layout from '../layouts/Layout.astro';
         // Check required fields manually to avoid browser popups
         const firstName = (document.getElementById('firstName') as HTMLInputElement).value.trim();
         const lastName = (document.getElementById('lastName') as HTMLInputElement).value.trim();
-        const email = (document.getElementById('email') as HTMLInputElement).value.trim();
+        const emailInput = document.getElementById('email') as HTMLInputElement;
+        const email = emailInput.value.trim();
         const message = (document.getElementById('message') as HTMLTextAreaElement).value.trim();
         
         if (!firstName || !lastName || !email || !message) {
@@ -321,6 +335,19 @@ import Layout from '../layouts/Layout.astro';
           errorMessage!.classList.remove('hidden');
           return;
         }
+        
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          emailInput.setAttribute('aria-invalid', 'true');
+          if (errorText) {
+            errorText.textContent = 'Please enter a valid email address.';
+          }
+          errorMessage!.classList.remove('hidden');
+          emailInput.focus();
+          return;
+        }
+        emailInput.setAttribute('aria-invalid', 'false');
         
         // Show loading state
         submitBtn!.disabled = true;
