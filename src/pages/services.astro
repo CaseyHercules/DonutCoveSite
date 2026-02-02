@@ -6,19 +6,22 @@ import Layout from '../layouts/Layout.astro';
   title="Services - Donut Cove Consulting" 
   description="Custom software development solutions including process automation, custom applications, and system integrations for small to medium businesses."
 >
-  <!-- Hero Section -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center space-y-8">
-        <h1 class="font-display font-bold text-4xl md:text-6xl">
-          <span class="bg-gradient-to-r from-tech-blue via-tech-purple to-tech-teal bg-clip-text text-transparent">
-            Our Services
-          </span>
-        </h1>
-        <p class="text-xl text-tech-slate max-w-3xl mx-auto leading-relaxed">
-            Custom software development solutions including process automation, custom applications, and system integrations for small to medium businesses
-        </p>
-      </div>
+  <!-- Hero Section with Organic Blobs -->
+  <section class="relative py-32 md:py-48 overflow-hidden">
+    <!-- Organic Background Blobs -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[80px] animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="max-w-4xl relative z-10">
+      <h1 class="font-display font-black text-6xl md:text-8xl tracking-tight leading-[0.95] text-ink dark:text-ink-dark mb-8 drop-shadow-sm">
+        Our<br />
+        <span class="text-coral-vibrant italic">Services</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-ink/80 dark:text-ink-dark/80 max-w-2xl leading-relaxed font-medium">
+        Custom software development solutions including process automation, custom applications, and system integrations for small to medium businesses.
+      </p>
     </div>
   </section>
 

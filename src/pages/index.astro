@@ -35,14 +35,49 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			
 			<!-- Integration Logos Strip -->
-			<div class="mt-16 pt-8 border-t border-ink/10 dark:border-ink-dark/10">
+			<div class="mt-16 pt-8 border-t border-ink/10 dark:border-ink-dark/10 w-full">
 				<p class="text-sm font-bold uppercase tracking-widest text-ink/40 mb-4">We Integrate With</p>
-				<div class="flex flex-wrap gap-8 text-ink/50 font-display text-xl font-bold grayscale hover:grayscale-0 transition-all duration-500">
-					<span>Stripe</span>
-					<span>QuickBooks</span>
-					<span>Shopify</span>
-					<span>Slack</span>
-					<span>Excel</span>
+				<div class="overflow-hidden w-full">
+					<div class="flex gap-8 text-ink/50 font-display text-xl font-bold grayscale hover:grayscale-0 transition-all duration-500 integration-carousel">
+						<span class="whitespace-nowrap">Stripe</span>
+						<span class="whitespace-nowrap">QuickBooks</span>
+						<span class="whitespace-nowrap">Shopify</span>
+						<span class="whitespace-nowrap">Slack</span>
+						<span class="whitespace-nowrap">Excel</span>
+						<span class="whitespace-nowrap">Salesforce</span>
+						<span class="whitespace-nowrap">HubSpot</span>
+						<span class="whitespace-nowrap">Zapier</span>
+						<span class="whitespace-nowrap">Airtable</span>
+						<span class="whitespace-nowrap">Notion</span>
+						<span class="whitespace-nowrap">Google Workspace</span>
+						<span class="whitespace-nowrap">Microsoft 365</span>
+						<span class="whitespace-nowrap">AWS</span>
+						<span class="whitespace-nowrap">Azure</span>
+						<span class="whitespace-nowrap">PostgreSQL</span>
+						<span class="whitespace-nowrap">MongoDB</span>
+						<span class="whitespace-nowrap">GitHub</span>
+						<span class="whitespace-nowrap">Jira</span>
+						<span class="whitespace-nowrap">Asana</span>
+						<span class="whitespace-nowrap">Stripe</span>
+						<span class="whitespace-nowrap">QuickBooks</span>
+						<span class="whitespace-nowrap">Shopify</span>
+						<span class="whitespace-nowrap">Slack</span>
+						<span class="whitespace-nowrap">Excel</span>
+						<span class="whitespace-nowrap">Salesforce</span>
+						<span class="whitespace-nowrap">HubSpot</span>
+						<span class="whitespace-nowrap">Zapier</span>
+						<span class="whitespace-nowrap">Airtable</span>
+						<span class="whitespace-nowrap">Notion</span>
+						<span class="whitespace-nowrap">Google Workspace</span>
+						<span class="whitespace-nowrap">Microsoft 365</span>
+						<span class="whitespace-nowrap">AWS</span>
+						<span class="whitespace-nowrap">Azure</span>
+						<span class="whitespace-nowrap">PostgreSQL</span>
+						<span class="whitespace-nowrap">MongoDB</span>
+						<span class="whitespace-nowrap">GitHub</span>
+						<span class="whitespace-nowrap">Jira</span>
+						<span class="whitespace-nowrap">Asana</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -86,8 +121,9 @@ import Layout from '../layouts/Layout.astro';
 	<!-- Services Grid -->
 	<section class="py-24">
 		<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-			<h2 class="font-display font-bold text-4xl md:text-5xl tracking-tight text-ink dark:text-ink-dark">
-				Core Services
+			<h2 class="font-display font-black text-5xl md:text-7xl tracking-tight leading-[0.95] text-ink dark:text-ink-dark">
+				Core<br />
+				<span class="text-coral-vibrant italic">Services</span>
 			</h2>
 			<a href="/services" class="hidden md:inline-block font-mono text-sm uppercase tracking-widest text-indigo font-bold hover:text-indigo-dark transition-colors">
 				View All →
@@ -128,7 +164,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between relative z-10">
                 <div>
                     <span class="font-mono text-xs uppercase tracking-widest text-white/60">Featured Case Study</span>
-                    <h4 class="font-display font-bold text-3xl mt-2">Logistics Automation</h4>
+                    <h4 class="font-display font-black text-4xl md:text-5xl tracking-tight leading-[0.95] mt-2">Logistics<br /><span class="italic">Automation</span></h4>
                     <p class="text-white/80 mt-2 text-lg">Saved 20h/week by replacing Excel with Node.js.</p>
                 </div>
                 <a href="/case-studies" class="bg-white text-indigo font-bold px-8 py-4 rounded-full hover:bg-coral-light hover:text-white transition-colors duration-300 shadow-lg">Read Case Study</a>
@@ -146,3 +182,23 @@ import Layout from '../layouts/Layout.astro';
 		</a>
 	</section>
 </Layout>
+
+<style>
+	.integration-carousel {
+		animation: scroll 60s linear infinite;
+		width: fit-content;
+	}
+	
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+	
+	.integration-carousel:hover {
+		animation-play-state: paused;
+	}
+</style>

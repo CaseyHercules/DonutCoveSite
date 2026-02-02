@@ -23,8 +23,8 @@
 		</div>
 		
 		<!-- Mobile Menu Button -->
-		<button class="lg:hidden p-2 text-slate-900 relative z-50" id="mobile-menu-button" aria-label="Toggle menu">
-			<div class="w-6 h-5 flex flex-col justify-between" id="hamburger">
+		<button class="lg:hidden p-2 text-slate-900 relative z-50" id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+			<div class="w-6 h-5 flex flex-col justify-between" id="hamburger" aria-hidden="true">
 				<span class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
 				<span class="w-full h-0.5 bg-current transition-all duration-300"></span>
 				<span class="w-full h-0.5 bg-current transition-all duration-300 origin-left"></span>
@@ -33,13 +33,13 @@
 	</div>
 	
 	<!-- Mobile Menu -->
-	<div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-24 px-8 shadow-2xl" id="mobile-menu">
-		<nav class="flex flex-col gap-6 text-3xl font-display font-black text-slate-900">
+	<div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-24 px-8 shadow-2xl" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-button">
+		<nav class="flex flex-col gap-6 text-3xl font-display font-black text-slate-900" role="navigation" aria-label="Mobile navigation">
 			<a href="/" class="mobile-nav-link hover:text-coral transition-colors">Home</a>
 			<a href="/about" class="mobile-nav-link hover:text-coral transition-colors">About</a>
 			<a href="/services" class="mobile-nav-link hover:text-coral transition-colors">Services</a>
 			<a href="/case-studies" class="mobile-nav-link hover:text-coral transition-colors">Work</a>
-			<a href="/contact" class="text-indigo hover:text-indigo-dark transition-colors">Contact</a>
+			<a href="/contact" class="mobile-nav-link text-indigo hover:text-indigo-dark transition-colors">Contact</a>
 		</nav>
         
         <!-- Mobile Menu Decoration -->
@@ -63,13 +63,13 @@
 
 	/* Hamburger Animation */
 	#hamburger.open span:nth-child(1) {
-		transform: rotate(45deg);
+		transform: translateY(9px) rotate(45deg);
 	}
 	#hamburger.open span:nth-child(2) {
 		opacity: 0;
 	}
 	#hamburger.open span:nth-child(3) {
-		transform: rotate(-45deg);
+		transform: translateY(-9px) rotate(-45deg);
 	}
 
 	#mobile-menu.open {
@@ -85,34 +85,53 @@
 		
 		if (!mobileMenuButton || !mobileMenu || !hamburger) return;
 		
+		function closeMobileMenu() {
+			mobileMenu!.classList.remove('open');
+			hamburger!.classList.remove('open');
+			document.body.style.overflow = '';
+			mobileMenuButton!.setAttribute('aria-expanded', 'false');
+		}
+		
+		function openMobileMenu() {
+			mobileMenu!.classList.add('open');
+			hamburger!.classList.add('open');
+			document.body.style.overflow = 'hidden';
+			mobileMenuButton!.setAttribute('aria-expanded', 'true');
+		}
+		
 		function toggleMobileMenu() {
 			const isOpen = mobileMenu!.classList.contains('open');
-			
 			if (isOpen) {
-				mobileMenu!.classList.remove('open');
-				hamburger!.classList.remove('open');
-				document.body.style.overflow = '';
+				closeMobileMenu();
 			} else {
-				mobileMenu!.classList.add('open');
-				hamburger!.classList.add('open');
-				document.body.style.overflow = 'hidden';
+				openMobileMenu();
 			}
 		}
 		
 		mobileMenuButton.addEventListener('click', toggleMobileMenu);
+		mobileMenuButton.setAttribute('aria-expanded', 'false');
 		
 		// Close on link click
 		document.querySelectorAll('.mobile-nav-link').forEach(link => {
-			link.addEventListener('click', () => {
-				mobileMenu!.classList.remove('open');
-				hamburger!.classList.remove('open');
-				document.body.style.overflow = '';
-			});
+			link.addEventListener('click', closeMobileMenu);
+		});
+		
+		// Close on ESC key
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && mobileMenu!.classList.contains('open')) {
+				closeMobileMenu();
+			}
+		});
+		
+		// Close on backdrop click
+		mobileMenu.addEventListener('click', (e) => {
+			if (e.target === mobileMenu) {
+				closeMobileMenu();
+			}
 		});
 	}
 	
 	document.addEventListener('astro:page-load', initializeNavigation);
-	// Fallback for first load if View Transitions aren't firing immediately
 	if (document.readyState === 'loading') {
 		document.addEventListener('DOMContentLoaded', initializeNavigation);
 	} else {
