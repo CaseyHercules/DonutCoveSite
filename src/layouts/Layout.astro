@@ -10,11 +10,13 @@ export interface Props {
 
 const { 
 	title, 
-	description = "Donut Cove Consulting - Software Development That Makes Work Delightful",
+	description = "Custom software development and process automation for growing businesses. We build internal tools, custom applications, and automated workflows.",
 	image = "/og-image.jpg" // Default OG image
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, "https://donutcove.com");
+const fullImageURL = new URL(image, "https://donutcove.com").toString();
+const isFAQPage = Astro.url.pathname.includes('/faq');
 ---
 
 <!DOCTYPE html>
@@ -35,14 +37,22 @@ const canonicalURL = new URL(Astro.url.pathname, "https://donutcove.com");
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={image} />
+		<meta property="og:image" content={fullImageURL} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Donut Cove Consulting" />
 		
 		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={canonicalURL} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={image} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalURL} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={fullImageURL} />
+		
+		<!-- Additional SEO -->
+		<meta name="theme-color" content="#D97706" />
+		<meta name="language" content="English" />
 		
 		<!-- Google Fonts: Inter & Fraunces -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,6 +60,158 @@ const canonicalURL = new URL(Astro.url.pathname, "https://donutcove.com");
 		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 		
 		<ClientRouter />
+		
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Donut Cove Consulting",
+			"url": "https://donutcove.com",
+			"logo": "https://donutcove.com/og-image.jpg",
+			"description": "Custom software development and process automation for growing businesses",
+			"email": "info@donutcove.com",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Minneapolis",
+				"addressRegion": "MN",
+				"addressCountry": "US"
+			},
+			"sameAs": []
+		})} />
+		
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Donut Cove Consulting",
+			"url": "https://donutcove.com",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://donutcove.com/search?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		})} />
+		
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"serviceType": "Custom Software Development",
+			"provider": {
+				"@type": "Organization",
+				"name": "Donut Cove Consulting"
+			},
+			"areaServed": "US",
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Software Development Services",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Process Automation",
+							"description": "Automate repetitive tasks and build automated workflows"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Custom Applications",
+							"description": "Build custom software applications tailored to your business"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "System Integration",
+							"description": "Connect existing tools and systems for seamless data flow"
+						}
+					}
+				]
+			}
+		})} />
+		
+		{isFAQPage && (
+			<script type="application/ld+json" set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "What types of businesses do you work with?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "We work with small to medium-sized businesses (typically 10-200 employees) that have outgrown manual processes but don't need enterprise-level solutions."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "How long does a typical project take?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Simple automation projects typically take 2-4 weeks. Custom applications usually run 6-12 weeks. Complex system integrations can take 8-16 weeks."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Do you provide ongoing support after project completion?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Yes. Every project includes 30 days of free support after launch. After that, we offer flexible support options for bug fixes, new features, updates, and training."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What's your pricing structure?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "We price each project based on what you actually need. Simple automation projects usually start around $5,000. Custom applications typically range from $15,000 to $50,000 depending on complexity."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "How involved will my team need to be during development?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "We keep it minimal. Usually we need 2-3 hours per week from your key people for feedback and testing. We handle the technical work and project management."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What technologies do you use?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "We use proven technologies including Python, JavaScript/TypeScript, React, Node.js, PostgreSQL, and cloud platforms like AWS and Azure."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Can you work with our existing systems?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Yes, that's one of our specialties. We work with common platforms like Salesforce, QuickBooks, Shopify, HubSpot, and many others. We can also connect to custom databases and legacy systems."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "How do you ensure data security and privacy?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Security is built into everything we do. We use encrypted data transmission, secure authentication, regular security checks, and follow relevant regulations (GDPR, HIPAA, etc.)."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What happens if we need changes after the project is complete?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "We build everything with future changes in mind. Small fixes are covered in the 30-day warranty. For bigger additions or changes, we'll give you clear pricing and timelines."
+						}
+					}
+				]
+			})} />
+		)}
 		
 		<style is:global>
 			/* Soft Editorial Reset & Base */
@@ -112,7 +274,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://donutcove.com");
 						</span>
 						<p class="mt-4 text-ink-muted dark:text-ink-muted-dark max-w-md text-sm leading-relaxed">
 							Software development. Human delight.<br>
-							Based in Minneapolis, operating globally.
+							Based in Minneapolis, serving clients nationwide.
 						</p>
 					</div>
 					
