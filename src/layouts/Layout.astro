@@ -47,7 +47,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://donutcove.com");
 		<!-- Google Fonts: Inter & Fraunces -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 		
 		<ClientRouter />
 		
@@ -67,6 +67,10 @@ const canonicalURL = new URL(Astro.url.pathname, "https://donutcove.com");
 			html {
 				background-color: var(--color-canvas);
 				color: var(--color-ink);
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				font-smoothing: antialiased;
+				text-rendering: optimizeLegibility;
 			}
 
 			body {
@@ -75,6 +79,10 @@ const canonicalURL = new URL(Astro.url.pathname, "https://donutcove.com");
 				min-height: 100vh;
 				display: flex;
 				flex-direction: column;
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				font-smoothing: antialiased;
+				text-rendering: optimizeLegibility;
 			}
 
 			/* Custom Selection Color */

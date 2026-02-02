@@ -33,12 +33,13 @@ import Layout from '../layouts/Layout.astro';
 					See Our Results
 				</a>
 			</div>
-			
-			<!-- Integration Logos Strip -->
-			<div class="mt-16 pt-8 border-t border-ink/10 dark:border-ink-dark/10 w-full">
-				<p class="text-sm font-bold uppercase tracking-widest text-ink/40 mb-4">We Integrate With</p>
-				<div class="overflow-hidden w-full">
-					<div class="flex gap-8 text-ink/50 font-display text-xl font-bold grayscale hover:grayscale-0 transition-all duration-500 integration-carousel">
+		</div>
+		
+		<!-- Integration Logos Strip - Full Width to Match Content Below -->
+		<div class="max-w-7xl mx-auto w-full relative z-10 mt-16 pt-8 border-t border-ink/10 dark:border-ink-dark/10">
+			<p class="text-sm font-bold uppercase tracking-widest text-ink/40 mb-4">We Integrate With</p>
+			<div class="overflow-hidden w-full">
+				<div class="flex gap-8 text-ink/50 font-display text-xl font-bold grayscale hover:grayscale-0 transition-all duration-500 integration-carousel">
 						<span class="whitespace-nowrap">Stripe</span>
 						<span class="whitespace-nowrap">QuickBooks</span>
 						<span class="whitespace-nowrap">Shopify</span>
@@ -186,19 +187,26 @@ import Layout from '../layouts/Layout.astro';
 <style>
 	.integration-carousel {
 		animation: scroll 60s linear infinite;
-		width: fit-content;
+		display: inline-flex;
+		will-change: transform;
 	}
 	
 	@keyframes scroll {
-		0% {
+		from {
 			transform: translateX(0);
 		}
-		100% {
+		to {
 			transform: translateX(-50%);
 		}
 	}
 	
 	.integration-carousel:hover {
 		animation-play-state: paused;
+	}
+	
+	@supports (-moz-appearance: none) {
+		.integration-carousel {
+			transform: translateZ(0);
+		}
 	}
 </style>
