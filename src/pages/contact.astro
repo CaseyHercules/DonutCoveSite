@@ -17,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-4xl relative z-10">
       <h1 class="font-display font-black text-6xl md:text-8xl tracking-tight leading-[0.95] text-ink dark:text-ink-dark mb-8 drop-shadow-sm">
         Let's Make<br />
-        <span class="text-coral-vibrant italic">Work Sweet</span>
+        <span class="text-coral-vibrant italic">Work Happen</span>
       </h1>
       <p class="text-xl md:text-2xl text-ink/80 dark:text-ink-dark/80 max-w-2xl leading-relaxed font-medium">
         Ready to eliminate tedious tasks and help your team focus on meaningful work? We'd love to hear about your challenges and discuss how we can help.
@@ -33,10 +33,10 @@ import Layout from '../layouts/Layout.astro';
         <!-- Contact Information -->
         <div class="space-y-8">
           <div class="space-y-6">
-            <h2 class="font-display font-bold text-3xl text-tech-charcoal">
+            <h2 class="font-display font-bold text-3xl text-ink dark:text-ink-dark">
               Get In Touch
             </h2>
-            <p class="text-lg text-tech-slate leading-relaxed">
+            <p class="text-lg text-ink/70 dark:text-ink-dark/70 leading-relaxed">
               We believe great software starts with great conversations. Let's discuss your team's pain points and explore how we can help make their work more enjoyable and meaningful.
             </p>
           </div>
@@ -50,8 +50,8 @@ import Layout from '../layouts/Layout.astro';
                 </svg>
               </div>
               <div>
-                <h3 class="font-semibold text-lg text-tech-charcoal">Email</h3>
-                <p class="text-tech-slate">Drop us a line anytime</p>
+                <h3 class="font-semibold text-lg text-ink dark:text-ink-dark">Email</h3>
+                <p class="text-ink/70 dark:text-ink-dark/70">Drop us a line anytime</p>
                 <a href="mailto:info@donutcove.com" class="text-tech-pink-dark hover:text-tech-pink transition-colors font-medium">
                   info@donutcove.com
                 </a>
@@ -65,8 +65,8 @@ import Layout from '../layouts/Layout.astro';
                 </svg>
               </div>
               <div>
-                <h3 class="font-semibold text-lg text-tech-charcoal">Response Time</h3>
-                <p class="text-tech-slate">We typically respond within 24 hours</p>
+                <h3 class="font-semibold text-lg text-ink dark:text-ink-dark">Response Time</h3>
+                <p class="text-ink/70 dark:text-ink-dark/70">We typically respond within 24 hours</p>
                 <p class="text-tech-teal-dark font-medium">
                   Usually much faster!
                 </p>
@@ -80,8 +80,8 @@ import Layout from '../layouts/Layout.astro';
                 </svg>
               </div>
               <div>
-                <h3 class="font-semibold text-lg text-tech-charcoal">Free Consultation</h3>
-                <p class="text-tech-slate">No pressure, no sales pitch</p>
+                <h3 class="font-semibold text-lg text-ink dark:text-ink-dark">Free Consultation</h3>
+                <p class="text-ink/70 dark:text-ink-dark/70">No pressure, no sales pitch</p>
                 <p class="text-tech-emerald-dark font-medium">
                   Just genuine problem-solving
                 </p>
@@ -90,31 +90,31 @@ import Layout from '../layouts/Layout.astro';
           </div>
           
           <!-- Decorative Element -->
-          <div class="hidden lg:block">
-            <div class="w-full h-48 bg-gradient-to-br from-tech-pink-light via-tech-teal-light to-tech-emerald-light rounded-3xl flex items-center justify-center relative overflow-hidden">
-              <div class="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
-              <div class="relative z-10 text-center space-y-4">
-                <div class="text-6xl animate-float">🍩</div>
-                <div class="text-lg font-display font-semibold text-tech-charcoal">
+          <div class="hidden lg:block relative">
+            <div class="w-full h-48 bg-white dark:bg-white/5 rounded-[2rem] p-8 shadow-xl shadow-indigo/5 border border-indigo/10 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-coral-light/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <div class="relative z-10 h-full flex flex-col justify-center text-center space-y-3">
+                <h3 class="text-2xl font-display font-bold text-ink dark:text-ink-dark">
                   Let's Chat!
-                </div>
+                </h3>
+                <p class="text-ink/70 dark:text-ink-dark/70">
+                  We're here to help solve your challenges
+                </p>
               </div>
-              <div class="absolute top-8 left-8 w-4 h-4 bg-tech-pink rounded-full animate-bounce-gentle"></div>
-              <div class="absolute bottom-8 right-8 w-5 h-5 bg-tech-teal rounded-full animate-float" style="animation-delay: 1s;"></div>
             </div>
           </div>
         </div>
         
         <!-- Contact Form -->
         <div class="bg-white rounded-3xl shadow-lg p-8 lg:p-12">
-          <h2 class="font-display font-bold text-2xl text-tech-charcoal mb-8">
+          <h2 class="font-display font-bold text-2xl text-ink dark:text-ink-dark mb-8">
             Tell Us About Your Project
           </h2>
           
           <form id="contact-form" action="/api/contact" method="POST" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label for="firstName" class="block text-sm font-medium text-tech-slate mb-2">
+                <label for="firstName" class="block text-sm font-medium text-ink/70 dark:text-ink-dark/70 mb-2">
                   First Name *
                 </label>
                 <input
@@ -215,7 +215,7 @@ import Layout from '../layouts/Layout.astro';
                   value="agreed"
                   class="mt-1 h-4 w-4 text-tech-blue border-gray-300 rounded focus:ring-tech-teal focus:ring-2"
                 />
-                <label for="privacy" class="text-sm text-tech-slate cursor-pointer">
+                <label for="privacy" class="text-sm text-ink/70 dark:text-ink-dark/70 cursor-pointer">
                   I agree to receive communications from Donut Cove Consulting about my inquiry. We respect your privacy and will never share your information.
                 </label>
               </div>
@@ -227,8 +227,8 @@ import Layout from '../layouts/Layout.astro';
                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
                   </svg>
                   <div>
-                    <h4 class="text-tech-charcoal font-semibold text-sm">Agreement Required</h4>
-                    <p class="text-tech-slate text-sm">Please agree to receive communications so we can respond to your inquiry.</p>
+                    <h4 class="text-ink dark:text-ink-dark font-semibold text-sm">Agreement Required</h4>
+                    <p class="text-ink/70 dark:text-ink-dark/70 text-sm">Please agree to receive communications so we can respond to your inquiry.</p>
                   </div>
                 </div>
               </div>
@@ -257,8 +257,8 @@ import Layout from '../layouts/Layout.astro';
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
               </svg>
               <div>
-                <h4 class="text-tech-charcoal font-semibold">Message Sent!</h4>
-                <p class="text-tech-slate" id="success-text">Thank you! We've received your message and will get back to you soon.</p>
+                <h4 class="text-ink dark:text-ink-dark font-semibold">Message Sent!</h4>
+                <p class="text-ink/70 dark:text-ink-dark/70" id="success-text">Thank you! We've received your message and will get back to you soon.</p>
               </div>
             </div>
           </div>
@@ -270,8 +270,8 @@ import Layout from '../layouts/Layout.astro';
                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
               </svg>
               <div>
-                <h4 class="text-tech-charcoal font-semibold">Something went wrong</h4>
-                <p class="text-tech-slate" id="error-text">Please try again or email us directly at info@donutcove.com</p>
+                <h4 class="text-ink dark:text-ink-dark font-semibold">Something went wrong</h4>
+                <p class="text-ink/70 dark:text-ink-dark/70" id="error-text">Please try again or email us directly at info@donutcove.com</p>
               </div>
             </div>
           </div>

@@ -26,14 +26,20 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Mission Section -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-24 relative">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div class="space-y-8">
-          <h2 class="font-display font-bold text-4xl md:text-5xl text-tech-charcoal">
-            Our Mission
+          <h2 class="font-display font-black text-5xl md:text-6xl tracking-tight text-ink dark:text-ink-dark">
+            Our<br />
+            <span class="text-coral-vibrant italic">Mission</span>
           </h2>
-          <div class="space-y-6 text-lg text-tech-slate leading-relaxed">
+          <div class="space-y-6 text-lg text-ink/70 dark:text-ink-dark/70 leading-relaxed">
             <p class="font-medium">
               At Donut Cove Consulting, we specialize in transforming business operations through intelligent software solutions. We believe technology should amplify human capabilities and make work more enjoyable.
             </p>
@@ -47,26 +53,15 @@ import Layout from '../layouts/Layout.astro';
         </div>
         
         <div class="relative">
-          <div class="w-full h-96 bg-gradient-to-br from-tech-blue-light via-tech-purple-light to-tech-teal-light rounded-2xl flex items-center justify-center relative overflow-hidden shadow-large border border-tech-border">
-            <div class="relative z-10 text-center space-y-8">
-              <div class="text-6xl animate-float">
-                <div class="text-8xl">🍩</div>
-              </div>
-              <div class="space-y-3">
-                <div class="text-2xl font-display font-semibold text-tech-charcoal">
-                  Innovation Through Code
-                </div>
-                <div class="text-tech-slate text-lg font-medium">
-                  Building solutions that scale and delight
-                </div>
-              </div>
+          <div class="bg-white dark:bg-white/5 p-12 rounded-[2rem] shadow-xl shadow-indigo/5 border border-indigo/10 relative overflow-hidden">
+            <div class="relative z-10 space-y-6">
+              <h3 class="font-display font-bold text-3xl text-ink dark:text-ink-dark">
+                Innovation Through Code
+              </h3>
+              <p class="text-ink/70 dark:text-ink-dark/70 text-lg leading-relaxed">
+                Building solutions that scale and delight. Every line of code we write is crafted to eliminate friction and amplify human potential.
+              </p>
             </div>
-            
-            <!-- Floating Elements -->
-            <div class="absolute top-12 left-12 w-3 h-3 bg-tech-blue rounded-full animate-pulse-slow opacity-60"></div>
-            <div class="absolute bottom-16 right-16 w-4 h-4 bg-tech-purple rounded-full animate-float opacity-60" style="animation-delay: 1.5s;"></div>
-            <div class="absolute top-24 right-12 w-2 h-2 bg-tech-teal rounded-full animate-pulse-slow opacity-60" style="animation-delay: 0.5s;"></div>
-            <div class="absolute bottom-24 left-20 w-3 h-3 bg-tech-pink rounded-full animate-bounce-gentle opacity-60" style="animation-delay: 2s;"></div>
           </div>
         </div>
       </div>
@@ -74,50 +69,40 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Story Section -->
-  <section class="py-20 ">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="space-y-8">
-          <div class="space-y-6">
-            <div class="text-tech-teal font-display font-semibold text-lg tracking-wide uppercase">Our Story</div>
-            <h2 class="font-display font-bold text-4xl md:text-5xl text-tech-charcoal leading-tight">
-              Making Work Delightful Through Code
-            </h2>
+  <section class="py-24 relative">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="relative">
+          <div class="bg-white dark:bg-white/5 p-12 rounded-[2rem] shadow-xl shadow-coral/5 border border-coral/10 relative overflow-hidden">
+            <div class="relative z-10 space-y-6">
+              <div class="text-coral font-display font-semibold text-lg tracking-wide uppercase">Our Story</div>
+              <h3 class="font-display font-bold text-3xl text-ink dark:text-ink-dark">
+                Making Work Delightful Through Code
+              </h3>
+              <p class="text-ink/70 dark:text-ink-dark/70 text-lg leading-relaxed">
+                Founded on the belief that technology should enhance human potential rather than complicate it.
+              </p>
+            </div>
           </div>
-          <div class="space-y-6 text-lg text-tech-slate leading-relaxed">
-            <p>
-              Founded on the belief that technology should enhance human potential rather than complicate it, Donut Cove Consulting emerged from years of witnessing talented teams bogged down by repetitive, soul-crushing tasks.
-            </p>
+        </div>
+        
+        <div class="space-y-8">
+          <h2 class="font-display font-black text-5xl md:text-6xl tracking-tight text-ink dark:text-ink-dark">
+            Bringing Joy<br />
+            <span class="text-indigo italic">Back to Work</span>
+          </h2>
+          <div class="space-y-6 text-lg text-ink/70 dark:text-ink-dark/70 leading-relaxed">
             <p>
               We've seen brilliant minds spending hours on data entry, manual reporting, and disconnected systems. We believe your team deserves better—they deserve to focus on creative problem-solving, strategic thinking, and the work that brings them genuine satisfaction.
             </p>
             <p>
-              Every solution we build is crafted with one goal: <strong class="text-tech-purple">bringing joy back to work</strong> through thoughtful automation and delightful user experiences.
+              Every solution we build is crafted with one goal: <strong class="text-coral-vibrant">bringing joy back to work</strong> through thoughtful automation and delightful user experiences.
             </p>
-          </div>
-        </div>
-        
-        <div class="relative">
-          <div class="w-full h-96 bg-gradient-to-br from-tech-blue-light via-tech-purple-light to-tech-teal-light rounded-2xl flex items-center justify-center relative overflow-hidden shadow-large border border-tech-border">
-            <div class="relative z-10 text-center space-y-8">
-              <div class="text-6xl animate-float">
-                <div class="text-8xl">🍩</div>
-              </div>
-              <div class="space-y-3">
-                <div class="text-2xl font-display font-semibold text-tech-charcoal">
-                  Innovation Through Code
-                </div>
-                <div class="text-tech-slate text-lg font-medium">
-                  Building solutions that scale and delight
-                </div>
-              </div>
-            </div>
-            
-            <!-- Floating Elements -->
-            <div class="absolute top-12 left-12 w-3 h-3 bg-tech-blue rounded-full animate-pulse-slow opacity-60"></div>
-            <div class="absolute bottom-16 right-16 w-4 h-4 bg-tech-purple rounded-full animate-float opacity-60" style="animation-delay: 1.5s;"></div>
-            <div class="absolute top-24 right-12 w-2 h-2 bg-tech-teal rounded-full animate-pulse-slow opacity-60" style="animation-delay: 0.5s;"></div>
-            <div class="absolute bottom-24 left-20 w-3 h-3 bg-tech-pink rounded-full animate-bounce-gentle opacity-60" style="animation-delay: 2s;"></div>
           </div>
         </div>
       </div>
@@ -129,10 +114,11 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-6 mb-20">
         <div class="text-tech-purple font-display font-semibold text-lg tracking-wide uppercase">Our Values</div>
-        <h2 class="font-display font-bold text-4xl md:text-5xl text-tech-charcoal">
-          What Drives Us Forward
+        <h2 class="font-display font-black text-5xl md:text-6xl tracking-tight text-ink dark:text-ink-dark">
+          What Drives<br />
+          <span class="text-coral-vibrant italic">Us Forward</span>
         </h2>
-        <p class="text-xl text-tech-slate max-w-4xl mx-auto leading-relaxed">
+        <p class="text-xl text-ink/80 dark:text-ink-dark/80 max-w-4xl mx-auto leading-relaxed">
           These core principles guide every decision we make and every solution we build.
         </p>
       </div>
@@ -142,8 +128,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="w-24 h-24 mx-auto bg-gradient-to-br from-tech-blue to-tech-blue-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-bounce-gentle">
             <span class="text-4xl">💡</span>
           </div>
-          <h3 class="font-display font-semibold text-2xl text-tech-charcoal">Innovation First</h3>
-          <p class="text-tech-slate leading-relaxed text-lg">
+          <h3 class="font-display font-semibold text-2xl text-ink dark:text-ink-dark">Innovation First</h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed text-lg">
             We embrace cutting-edge technologies and creative approaches to solve complex problems in ways that delight users and drive results.
           </p>
         </div>
@@ -152,8 +138,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="w-24 h-24 mx-auto bg-gradient-to-br from-tech-purple to-tech-purple-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-bounce-gentle">
             <span class="text-4xl">🤝</span>
           </div>
-          <h3 class="font-display font-semibold text-2xl text-tech-charcoal">Collaborative Approach</h3>
-          <p class="text-tech-slate leading-relaxed text-lg">
+          <h3 class="font-display font-semibold text-2xl text-ink dark:text-ink-dark">Collaborative Approach</h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed text-lg">
             We work as an extension of your team, ensuring solutions align with your business objectives and team workflows while fostering joy in the process.
           </p>
         </div>
@@ -162,8 +148,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="w-24 h-24 mx-auto bg-gradient-to-br from-tech-teal to-tech-teal-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-bounce-gentle">
             <span class="text-4xl">🚀</span>
           </div>
-          <h3 class="font-display font-semibold text-2xl text-tech-charcoal">Performance Driven</h3>
-          <p class="text-tech-slate leading-relaxed text-lg">
+          <h3 class="font-display font-semibold text-2xl text-ink dark:text-ink-dark">Performance Driven</h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed text-lg">
             Every solution is optimized for speed, efficiency, and measurable business impact that makes your team smile from day one.
           </p>
         </div>
@@ -172,8 +158,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="w-24 h-24 mx-auto bg-gradient-to-br from-tech-orange to-tech-orange-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-bounce-gentle">
             <span class="text-4xl">⚙️</span>
           </div>
-          <h3 class="font-display font-semibold text-2xl text-tech-charcoal">Technical Excellence</h3>
-          <p class="text-tech-slate leading-relaxed text-lg">
+          <h3 class="font-display font-semibold text-2xl text-ink dark:text-ink-dark">Technical Excellence</h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed text-lg">
             We use modern development practices and proven technologies to build maintainable, secure applications that developers love to work with.
           </p>
         </div>
@@ -182,8 +168,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="w-24 h-24 mx-auto bg-gradient-to-br from-tech-emerald to-tech-emerald-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-bounce-gentle">
             <span class="text-4xl">📈</span>
           </div>
-          <h3 class="font-display font-semibold text-2xl text-tech-charcoal">Continuous Improvement</h3>
-          <p class="text-tech-slate leading-relaxed text-lg">
+          <h3 class="font-display font-semibold text-2xl text-ink dark:text-ink-dark">Continuous Improvement</h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed text-lg">
             We stay current with industry best practices and continuously refine our development processes to deliver even better results.
           </p>
         </div>
@@ -192,8 +178,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="w-24 h-24 mx-auto bg-gradient-to-br from-tech-pink to-tech-pink-dark rounded-xl flex items-center justify-center text-white shadow-medium hover:animate-bounce-gentle">
             <span class="text-4xl">💜</span>
           </div>
-          <h3 class="font-display font-semibold text-2xl text-tech-charcoal">Client Success</h3>
-          <p class="text-tech-slate leading-relaxed text-lg">
+          <h3 class="font-display font-semibold text-2xl text-ink dark:text-ink-dark">Client Success</h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed text-lg">
             Your success is our success. We measure our impact by the tangible improvements in your business operations and team happiness.
           </p>
         </div>
@@ -206,47 +192,51 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center space-y-6 mb-20">
         <div class="text-tech-emerald font-display font-semibold text-lg tracking-wide uppercase">Meet The Team</div>
-        <h2 class="font-display font-bold text-4xl md:text-5xl text-tech-charcoal">
-          Passionate Builders & Problem Solvers
+        <h2 class="font-display font-black text-5xl md:text-6xl tracking-tight text-ink dark:text-ink-dark">
+          Passionate<br />
+          <span class="text-indigo italic">Builders</span>
         </h2>
-        <p class="text-xl text-tech-slate max-w-4xl mx-auto leading-relaxed">
+        <p class="text-xl text-ink/80 dark:text-ink-dark/80 max-w-4xl mx-auto leading-relaxed">
           Our diverse team brings together technical expertise, creative thinking, and a shared commitment to making work more joyful through technology.
         </p>
       </div>
       
-      <div class="text-center space-y-8 p-12 rounded-3xl bg-gradient-to-br from-tech-blue-light via-tech-purple-light to-tech-teal-light border border-tech-border shadow-large">
-        <div class="text-6xl">🚀</div>
-        <h3 class="font-display font-semibold text-2xl text-tech-charcoal">Growing Team</h3>
-        <p class="text-tech-slate text-lg leading-relaxed max-w-2xl mx-auto">
-          We're constantly growing our team of talented developers, designers, and strategists who share our passion for creating delightful software solutions. Ready to join us on this journey?
-        </p>
-        <a href="/contact" class="inline-block bg-gradient-to-r from-tech-blue to-tech-purple text-white px-8 py-4 rounded-xl font-semibold hover:shadow-glow-purple transform hover:-translate-y-1 transition-all duration-300">
-          Let's Work Together
-        </a>
+      <div class="text-center space-y-8 p-12 rounded-3xl bg-white dark:bg-white/5 border border-indigo/10 shadow-xl shadow-indigo/5 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-indigo/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="relative z-10">
+          <h3 class="font-display font-black text-4xl md:text-5xl text-ink dark:text-ink-dark mb-4">
+            Growing<br />
+            <span class="text-coral-vibrant italic">Team</span>
+          </h3>
+          <p class="text-ink/70 dark:text-ink-dark/70 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+            We're constantly growing our team of talented developers, designers, and strategists who share our passion for creating delightful software solutions. Ready to join us on this journey?
+          </p>
+          <a href="/contact" class="inline-block bg-indigo text-white px-8 py-4 rounded-full font-bold hover:bg-indigo-dark hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-indigo/20">
+            Let's Work Together
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-24 bg-gradient-to-br from-white via-tech-blue-light/30 to-tech-purple-light/40 relative overflow-hidden">
-    <!-- Whimsical background elements -->
-    <div class="absolute inset-0 opacity-15">
-      <div class="absolute top-20 left-20 w-16 h-16 bg-tech-pink/40 rounded-full animate-float"></div>
-      <div class="absolute top-40 right-32 w-12 h-12 bg-tech-orange/40 rounded-full animate-bounce-gentle" style="animation-delay: 1s;"></div>
-      <div class="absolute bottom-32 left-1/4 w-20 h-20 bg-tech-blue/30 rounded-full animate-float" style="animation-delay: 2s;"></div>
-      <div class="absolute bottom-20 right-20 w-14 h-14 bg-tech-purple/40 rounded-full animate-bounce-gentle" style="animation-delay: 0.5s;"></div>
+  <section class="py-32 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
     </div>
     
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 relative z-10">
       <div class="space-y-6">
-        <h2 class="font-display font-bold text-4xl md:text-5xl text-tech-charcoal">
-          Ready to Optimize Your Operations?
+        <h2 class="font-display font-black text-5xl md:text-7xl tracking-tight text-ink dark:text-ink-dark">
+          Ready to<br />
+          <span class="text-coral-vibrant italic">Optimize?</span>
         </h2>
-        <p class="text-xl text-tech-slate leading-relaxed max-w-3xl mx-auto">
+        <p class="text-xl text-ink/80 dark:text-ink-dark/80 leading-relaxed max-w-3xl mx-auto">
           Let's discuss how we can help streamline your processes and build solutions that scale with your business while bringing joy to your team.
         </p>
       </div>
-      <a href="/contact" class="inline-block bg-gradient-to-r from-tech-blue-dark to-tech-purple-dark text-white px-16 py-6 rounded-xl font-semibold text-xl hover:shadow-glow-purple transform hover:-translate-y-1 hover:scale-105 transition-all duration-300">
+      <a href="/contact" class="inline-block bg-indigo text-white px-12 py-6 rounded-full font-bold text-xl hover:bg-indigo-dark hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-indigo/20">
         Start the Conversation
       </a>
     </div>

@@ -32,57 +32,58 @@ import Layout from '../layouts/Layout.astro';
       <!-- Case Study 1: Gracelyn Group -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
-          <div class="inline-block px-4 py-2 bg-tech-blue-light rounded-full text-tech-blue-dark font-semibold text-sm">
+          <div class="inline-block px-4 py-2 bg-coral-light/20 rounded-full text-coral-vibrant font-semibold text-sm">
             Professional Services
           </div>
-          <h2 class="font-display font-bold text-3xl md:text-4xl text-tech-charcoal">
-            Gracelyn Group: Streamlined Incident Reporting
+          <h2 class="font-display font-black text-4xl md:text-5xl tracking-tight text-ink dark:text-ink-dark">
+            Gracelyn Group:<br />
+            <span class="text-coral-vibrant italic">Streamlined Reporting</span>
           </h2>
-          <p class="text-lg text-tech-slate leading-relaxed">
+          <p class="text-lg text-ink/70 dark:text-ink-dark/70 leading-relaxed">
             Gracelyn Group's incident reporting process was slow and manual. Staff needed a faster system that didn't require learning new procedures or disrupting their established workflow.
           </p>
           
           <div class="space-y-4">
             <div class="flex items-start space-x-3">
-              <span class="w-2 h-2 bg-tech-blue rounded-full mt-2"></span>
-              <span class="text-tech-slate font-medium">Automated data capture and processing</span>
+              <span class="w-2 h-2 bg-coral rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Automated data capture and processing</span>
             </div>
             <div class="flex items-start space-x-3">
-              <span class="w-2 h-2 bg-tech-blue rounded-full mt-2"></span>
-              <span class="text-tech-slate font-medium">Maintained familiar workflow patterns</span>
+              <span class="w-2 h-2 bg-coral rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Maintained familiar workflow patterns</span>
             </div>
             <div class="flex items-start space-x-3">
-              <span class="w-2 h-2 bg-tech-blue rounded-full mt-2"></span>
-              <span class="text-tech-slate font-medium">Seamless integration with existing systems</span>
+              <span class="w-2 h-2 bg-coral rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Seamless integration with existing systems</span>
             </div>
           </div>
           
           <div class="grid grid-cols-3 gap-6 pt-6">
             <div class="text-center">
-              <div class="text-2xl font-bold text-tech-blue-dark">80%</div>
-              <div class="text-sm text-tech-slate">Faster processing</div>
+              <div class="text-2xl font-bold text-coral-vibrant">80%</div>
+              <div class="text-sm text-ink/60 dark:text-ink-dark/60">Faster processing</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-tech-emerald-dark">Zero</div>
-              <div class="text-sm text-tech-slate">Training required</div>
+              <div class="text-2xl font-bold text-indigo">Zero</div>
+              <div class="text-sm text-ink/60 dark:text-ink-dark/60">Training required</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-tech-purple-dark">100%</div>
-              <div class="text-sm text-tech-slate">User adoption</div>
+              <div class="text-2xl font-bold text-coral-vibrant">100%</div>
+              <div class="text-sm text-ink/60 dark:text-ink-dark/60">User adoption</div>
             </div>
           </div>
         </div>
         
-        <div class="lg:order-last">
-          <div class="bg-gradient-to-br from-tech-blue-light to-tech-purple-light flex items-center justify-center p-12 rounded-3xl shadow-large border border-tech-border">
-            <div class="text-center space-y-6">
-              <div class="text-6xl">📋</div>
-              <div class="text-2xl font-display font-semibold text-tech-charcoal">
+        <div class="lg:order-last relative">
+          <div class="bg-white dark:bg-white/5 p-12 rounded-[2rem] shadow-xl shadow-coral/5 border border-coral/10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-coral-light/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div class="relative z-10 space-y-4">
+              <h3 class="font-display font-bold text-2xl text-ink dark:text-ink-dark">
                 Process Automation
-              </div>
-              <div class="text-tech-slate">
-                Streamlined reporting workflow
-              </div>
+              </h3>
+              <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed">
+                Streamlined reporting workflow that eliminated manual processes while maintaining user familiarity.
+              </p>
             </div>
           </div>
         </div>
@@ -90,58 +91,59 @@ import Layout from '../layouts/Layout.astro';
       
       <!-- Case Study 2: CareRev -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="lg:order-1">
-          <div class="inline-block px-4 py-2 bg-tech-teal-light rounded-full text-tech-teal-dark font-semibold text-sm">
+        <div class="lg:order-1 relative">
+          <div class="bg-white dark:bg-white/5 p-12 rounded-[2rem] shadow-xl shadow-indigo/5 border border-indigo/10 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-indigo/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+            <div class="relative z-10 space-y-4">
+              <h3 class="font-display font-bold text-2xl text-ink dark:text-ink-dark">
+                Investigation Intelligence
+              </h3>
+              <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed">
+                Enhanced auditor workflows that focus on real threats and eliminate false positives.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:order-2 space-y-8">
+          <div class="inline-block px-4 py-2 bg-indigo/20 rounded-full text-indigo font-semibold text-sm">
             Healthcare Technology
           </div>
-          <h2 class="font-display font-bold text-3xl md:text-4xl text-tech-charcoal mt-6">
-            CareRev: Smart Fraud Detection
+          <h2 class="font-display font-black text-4xl md:text-5xl tracking-tight text-ink dark:text-ink-dark">
+            CareRev:<br />
+            <span class="text-indigo italic">Smart Detection</span>
           </h2>
-          <p class="text-lg text-tech-slate leading-relaxed mt-6">
+          <p class="text-lg text-ink/70 dark:text-ink-dark/70 leading-relaxed">
             CareRev's fraud team spent too much time reviewing false alerts and manually tracking suspicious patterns. They needed smarter tools to focus on real threats and investigate cases faster.
           </p>
           
-          <div class="space-y-4 mt-8">
+          <div class="space-y-4">
             <div class="flex items-start space-x-3">
-              <span class="w-2 h-2 bg-tech-teal rounded-full mt-2"></span>
-              <span class="text-tech-slate font-medium">Intelligent pattern recognition system</span>
+              <span class="w-2 h-2 bg-indigo rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Intelligent pattern recognition system</span>
             </div>
             <div class="flex items-start space-x-3">
-              <span class="w-2 h-2 bg-tech-teal rounded-full mt-2"></span>
-              <span class="text-tech-slate font-medium">Streamlined auditor investigation tools</span>
+              <span class="w-2 h-2 bg-indigo rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Streamlined auditor investigation tools</span>
             </div>
             <div class="flex items-start space-x-3">
-              <span class="w-2 h-2 bg-tech-teal rounded-full mt-2"></span>
-              <span class="text-tech-slate font-medium">Eliminated hours of manual review</span>
+              <span class="w-2 h-2 bg-indigo rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Eliminated hours of manual review</span>
             </div>
           </div>
           
           <div class="grid grid-cols-3 gap-6 pt-8">
             <div class="text-center">
-              <div class="text-2xl font-bold text-tech-teal-dark">20hrs</div>
-              <div class="text-sm text-tech-slate">Saved weekly</div>
+              <div class="text-2xl font-bold text-indigo">20hrs</div>
+              <div class="text-sm text-ink/60 dark:text-ink-dark/60">Saved weekly</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-tech-pink-dark">50%</div>
-              <div class="text-sm text-tech-slate">More efficient workflow</div>
+              <div class="text-2xl font-bold text-coral-vibrant">50%</div>
+              <div class="text-sm text-ink/60 dark:text-ink-dark/60">More efficient</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-tech-purple-dark">80%</div>
-              <div class="text-sm text-tech-slate">Fewer false positives</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="lg:order-2">
-          <div class="lg:order-1 bg-gradient-to-br from-tech-teal-light to-tech-emerald-light flex items-center justify-center p-12 rounded-3xl shadow-large border border-tech-border">
-            <div class="text-center space-y-6">
-              <div class="text-6xl">🔍</div>
-              <div class="text-2xl font-display font-semibold text-tech-charcoal">
-                Investigation Intelligence
-              </div>
-              <div class="text-tech-slate">
-                Enhanced auditor workflows
-              </div>
+              <div class="text-2xl font-bold text-indigo">80%</div>
+              <div class="text-sm text-ink/60 dark:text-ink-dark/60">Fewer false positives</div>
             </div>
           </div>
         </div>
@@ -150,57 +152,58 @@ import Layout from '../layouts/Layout.astro';
       <!-- Case Study 3: Bug Reporting Integration -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
-          <div class="inline-block px-4 py-2 bg-tech-emerald-light rounded-full text-tech-emerald-dark font-semibold text-sm">
+          <div class="inline-block px-4 py-2 bg-coral-light/20 rounded-full text-coral-vibrant font-semibold text-sm">
             Software Development
           </div>
-          <h2 class="font-display font-bold text-3xl md:text-4xl text-tech-charcoal">
-            Cross-Team Communication Bridge
+          <h2 class="font-display font-black text-4xl md:text-5xl tracking-tight text-ink dark:text-ink-dark">
+            Cross-Team<br />
+            <span class="text-coral-vibrant italic">Communication</span>
           </h2>
-          <p class="text-lg text-tech-slate leading-relaxed">
+          <p class="text-lg text-ink/70 dark:text-ink-dark/70 leading-relaxed">
             Customer support and development teams were losing critical bug information in handoffs. Issues took too long to resolve because important details got lost between systems and teams.
           </p>
           
           <div class="space-y-4">
             <div class="flex items-start space-x-3">
-              <span class="w-2 h-2 bg-tech-emerald rounded-full mt-2"></span>
-              <span class="text-tech-slate font-medium">Seamless integration between siloed internal systems</span>
+              <span class="w-2 h-2 bg-coral rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Seamless integration between siloed internal systems</span>
             </div>
             <div class="flex items-start space-x-3">
-              <span class="w-2 h-2 bg-tech-emerald rounded-full mt-2"></span>
-              <span class="text-tech-slate font-medium">Preserved existing team workflows</span>
+              <span class="w-2 h-2 bg-coral rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Preserved existing team workflows</span>
             </div>
             <div class="flex items-start space-x-3">
-              <span class="w-2 h-2 bg-tech-emerald rounded-full mt-2"></span>
-              <span class="text-tech-slate font-medium">Real-time information sharing</span>
+              <span class="w-2 h-2 bg-coral rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-ink/70 dark:text-ink-dark/70 font-medium">Real-time information sharing</span>
             </div>
           </div>
           
           <div class="grid grid-cols-3 gap-6 pt-6">
             <div class="text-center">
-              <div class="text-2xl font-bold text-tech-emerald-dark">1 Day</div>
-              <div class="text-sm text-tech-slate">Faster resolution</div>
+              <div class="text-2xl font-bold text-coral-vibrant">1 Day</div>
+              <div class="text-sm text-ink/60 dark:text-ink-dark/60">Faster resolution</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-tech-teal-dark">20%</div>
-              <div class="text-sm text-tech-slate">Team efficiency gain</div>
+              <div class="text-2xl font-bold text-indigo">20%</div>
+              <div class="text-sm text-ink/60 dark:text-ink-dark/60">Efficiency gain</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-tech-purple-dark">75+</div>
-              <div class="text-sm text-tech-slate">Team members benefited</div>
+              <div class="text-2xl font-bold text-coral-vibrant">75+</div>
+              <div class="text-sm text-ink/60 dark:text-ink-dark/60">Team members</div>
             </div>
           </div>
         </div>
         
-        <div class="lg:order-last">
-          <div class="bg-gradient-to-br from-tech-emerald-light to-tech-pink-light flex items-center justify-center p-12 rounded-3xl shadow-large border border-tech-border">
-            <div class="text-center space-y-6">
-              <div class="text-6xl">🔗</div>
-              <div class="text-2xl font-display font-semibold text-tech-charcoal">
+        <div class="lg:order-last relative">
+          <div class="bg-white dark:bg-white/5 p-12 rounded-[2rem] shadow-xl shadow-indigo/5 border border-indigo/10 relative overflow-hidden">
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-indigo/20 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
+            <div class="relative z-10 space-y-4">
+              <h3 class="font-display font-bold text-2xl text-ink dark:text-ink-dark">
                 Team Integration
-              </div>
-              <div class="text-tech-slate">
-                Seamless collaboration
-              </div>
+              </h3>
+              <p class="text-ink/70 dark:text-ink-dark/70 leading-relaxed">
+                Seamless collaboration that bridges systems and eliminates information silos.
+              </p>
             </div>
           </div>
         </div>
@@ -209,57 +212,61 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Results Overview -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-24 relative">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center space-y-6 mb-20">
-        <h2 class="font-display font-bold text-4xl md:text-5xl text-tech-charcoal">
-          Results That Matter
+        <h2 class="font-display font-black text-5xl md:text-6xl tracking-tight text-ink dark:text-ink-dark">
+          Results<br />
+          <span class="text-coral-vibrant italic">That Matter</span>
         </h2>
-        <p class="text-xl text-tech-slate max-w-4xl mx-auto leading-relaxed">
+        <p class="text-xl text-ink/80 dark:text-ink-dark/80 max-w-4xl mx-auto leading-relaxed">
           Real metrics from real businesses that trusted us to transform their operations.
         </p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div class="text-center space-y-4 p-8 rounded-2xl bg-gradient-to-br from-tech-blue-light to-white border border-tech-blue/10">
-          <div class="text-4xl font-bold text-tech-blue-dark">150+ Hours</div>
-          <div class="text-lg font-medium text-tech-charcoal">Weekly Time Savings</div>
-          <div class="text-tech-slate">Consistent productivity gains</div>
+        <div class="text-center space-y-4 p-8 rounded-2xl bg-white dark:bg-white/5 border border-indigo/10 shadow-xl shadow-indigo/5">
+          <div class="text-4xl font-bold text-indigo">150+ Hours</div>
+          <div class="text-lg font-medium text-ink dark:text-ink-dark">Weekly Time Savings</div>
+          <div class="text-ink/70 dark:text-ink-dark/70">Consistent productivity gains</div>
         </div>
         
-        <div class="text-center space-y-4 p-8 rounded-2xl bg-gradient-to-br from-tech-purple-light to-white border border-tech-purple/10">
-          <div class="text-4xl font-bold text-tech-purple-dark">100%</div>
-          <div class="text-lg font-medium text-tech-charcoal">Client Satisfaction</div>
-          <div class="text-tech-slate">Clients achieved their goals completely</div>
+        <div class="text-center space-y-4 p-8 rounded-2xl bg-white dark:bg-white/5 border border-coral/10 shadow-xl shadow-coral/5">
+          <div class="text-4xl font-bold text-coral-vibrant">100%</div>
+          <div class="text-lg font-medium text-ink dark:text-ink-dark">Client Satisfaction</div>
+          <div class="text-ink/70 dark:text-ink-dark/70">Clients achieved their goals completely</div>
         </div>
         
-        <div class="text-center space-y-4 p-8 rounded-2xl bg-gradient-to-br from-tech-teal-light to-white border border-tech-teal/10">
-          <div class="text-4xl font-bold text-tech-teal-dark">$400K</div>
-          <div class="text-lg font-medium text-tech-charcoal">Cost Savings</div>
-          <div class="text-tech-slate">Delivered to our clients</div>
+        <div class="text-center space-y-4 p-8 rounded-2xl bg-white dark:bg-white/5 border border-indigo/10 shadow-xl shadow-indigo/5">
+          <div class="text-4xl font-bold text-indigo">$400K</div>
+          <div class="text-lg font-medium text-ink dark:text-ink-dark">Cost Savings</div>
+          <div class="text-ink/70 dark:text-ink-dark/70">Delivered to our clients</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-br from-white via-tech-blue-light/30 to-tech-purple-light/40 relative overflow-hidden">
-    <!-- Whimsical background elements -->
-    <div class="absolute inset-0 opacity-15">
-      <div class="absolute top-20 left-20 w-16 h-16 bg-tech-pink/40 rounded-full animate-float"></div>
-      <div class="absolute top-40 right-32 w-12 h-12 bg-tech-orange/40 rounded-full animate-bounce-gentle" style="animation-delay: 1s;"></div>
-      <div class="absolute bottom-32 left-1/4 w-20 h-20 bg-tech-blue/30 rounded-full animate-float" style="animation-delay: 2s;"></div>
-      <div class="absolute bottom-20 right-20 w-14 h-14 bg-tech-purple/40 rounded-full animate-bounce-gentle" style="animation-delay: 0.5s;"></div>
+  <section class="py-32 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-coral-light/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div class="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-indigo/20 rounded-full blur-[100px] animate-pulse" style="animation-delay: 2s;"></div>
     </div>
     
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
-      <h2 class="font-display font-bold text-3xl md:text-4xl text-tech-charcoal">
-        Ready to Join Our Success Stories?
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 relative z-10">
+      <h2 class="font-display font-black text-5xl md:text-7xl tracking-tight text-ink dark:text-ink-dark">
+        Ready to Join<br />
+        <span class="text-coral-vibrant italic">Our Success Stories?</span>
       </h2>
-      <p class="text-xl text-tech-slate leading-relaxed max-w-3xl mx-auto">
+      <p class="text-xl text-ink/80 dark:text-ink-dark/80 leading-relaxed max-w-3xl mx-auto">
         Let's discuss how we can help your team eliminate tedious tasks and achieve similar results.
       </p>
-      <a href="/contact" class="inline-block bg-gradient-to-r from-tech-blue-dark to-tech-purple-dark text-white px-12 py-4 rounded-xl font-semibold text-lg hover:shadow-glow-purple transform hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact" class="inline-block bg-indigo text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-indigo-dark hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-indigo/20">
         Start Your Success Story
       </a>
     </div>
